@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPAN 121 &mdash; Unidad 1</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:#eef0ee;color:#1a1a1a;padding:1rem;line-height:1.6;}
+.shell{max-width:860px;margin:0 auto;padding-bottom:3rem;}
+.masthead{background:#0a5c46;border-radius:14px;padding:1.2rem 1.5rem;margin-bottom:1rem;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;}
+.masthead h1{color:#fff;font-size:22px;font-weight:800;letter-spacing:-0.3px;}
+.masthead .sub{color:#c8f5e5;font-size:13px;margin-top:3px;font-style:italic;}
+.name-wrap{display:flex;align-items:center;gap:8px;}
+.name-wrap label{color:#c8f5e5;font-size:13px;font-weight:700;}
+.name-wrap input{border:none;border-radius:8px;padding:9px 12px;font-size:14px;font-family:inherit;min-width:190px;outline:none;}
+.nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem;}
+.tab{padding:10px 15px;font-size:14px;font-weight:600;color:#444;background:#fff;border:2px solid #ccc;border-radius:8px;cursor:pointer;font-family:inherit;min-height:44px;transition:all .15s;}
+.tab:hover{border-color:#0a5c46;color:#0a5c46;background:#f0fdf8;}
+.tab.active{background:#0a5c46;color:#fff;border-color:#0a5c46;}
+.frame-wrap{display:none;}
+.frame-wrap.show{display:block;}
+iframe{width:100%;border:none;display:block;background:transparent;overflow:hidden;}
+/* Inicio panel (authored) */
+#inicio{display:none;}
+#inicio.show{display:block;}
+.card{background:#fff;border:1.5px solid #e0e0e0;border-radius:12px;padding:1.5rem;margin-bottom:1.25rem;}
+.card-title{font-size:11px;font-weight:800;color:#555;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:0.9rem;}
+.sec-title{font-size:20px;font-weight:800;color:#1a1a1a;margin-bottom:0.75rem;}
+.obj-list{list-style:none;}
+.obj-list li{display:flex;align-items:flex-start;gap:12px;padding:9px 0;font-size:15px;border-bottom:1px solid #e8e8e8;line-height:1.5;}
+.obj-list li:last-child{border-bottom:none;}
+.obj-list li::before{content:"";width:8px;height:8px;min-width:8px;background:#138a60;border-radius:50%;margin-top:6px;}
+.sched{width:100%;border-collapse:collapse;}
+.sched th{background:#f0f0f0;padding:10px 12px;text-align:left;font-weight:700;font-size:14px;border-bottom:2px solid #ccc;}
+.sched td{padding:10px 12px;border-bottom:1px solid #e8e8e8;font-size:14px;vertical-align:top;line-height:1.5;}
+.bdg{display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700;}
+.b-in{background:#d4f0e3;color:#0a3d28;}.b-pr{background:#fde8c8;color:#6b3a00;}.b-sg{background:#dbeafe;color:#1e3a6e;}
+.cult{background:#e8f8f0;border-color:#7dd6b0;}
+.cult .card-title{color:#0a4a38;}.cult p{font-size:15px;color:#0a3d28;line-height:1.7;}
+/* Submit bar */
+.submit-bar{background:#fff;border:1.5px solid #dfe3df;border-radius:12px;padding:1.2rem 1.4rem;margin-top:1.5rem;}
+.submit-bar h2{font-size:16px;font-weight:800;color:#0a3d28;margin-bottom:4px;}
+.submit-bar p{font-size:13px;color:#555;line-height:1.5;margin-bottom:0.9rem;}
+.btn-row{display:flex;flex-wrap:wrap;gap:8px;}
+.big-btn{padding:11px 22px;font-size:15px;font-weight:700;font-family:inherit;border-radius:9px;cursor:pointer;border:2px solid #0a5c46;min-height:46px;}
+.big-btn.primary{background:#0a5c46;color:#fff;}.big-btn.primary:hover{background:#085040;}
+.big-btn.ghost{background:#fff;color:#0a5c46;}.big-btn.ghost:hover{background:#e8f8f0;}
+#report-out{width:100%;margin-top:1rem;border:1.5px solid #cdd3cd;border-radius:8px;padding:12px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.55;background:#fafbfa;color:#1a1a1a;resize:vertical;display:none;}
+.hint{font-size:12px;color:#0a5c46;font-weight:600;margin-top:8px;min-height:16px;}
+.flyer{max-width:100%;border-radius:10px;margin-top:0.5rem;}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <div class="masthead">
+    <div>
+      <h1>SPAN 121 &mdash; Unidad 1</h1>
+      <div class="sub">Presentaciones, verbos regulares, art&iacute;culos y tu perfil en l&iacute;nea</div>
+    </div>
+    <div class="name-wrap">
+      <label for="stu-name">Tu nombre:</label>
+      <input id="stu-name" type="text" placeholder="Nombre y apellido" autocomplete="name">
+    </div>
+  </div>
+
+  <nav class="nav" id="tabbar" aria-label="Secciones del curso"></nav>
+
+  <!-- INICIO (authored, combined) -->
+  <div id="inicio" class="show">
+    <h2 class="sec-title">Objetivos de la unidad / Learning Objectives</h2>
+    <div class="card">
+      <ul class="obj-list">
+        <li>Introduce yourself and others using <em>llamarse</em> and <em>ser</em></li>
+        <li>Use subject pronouns correctly in spoken and written Spanish</li>
+        <li>Conjugate regular <em>-ar</em>, <em>-er</em>, and <em>-ir</em> verbs in the present tense for all persons</li>
+        <li>Apply definite and indefinite articles, and identify noun gender by endings and context</li>
+        <li>Recognize and produce classroom phrases and key learning-activity vocabulary</li>
+        <li>Identify and produce all sounds of the Spanish alphabet</li>
+        <li>Describe your daily study habits using at least five different verbs</li>
+        <li>Write a 75&ndash;100 word online-platform profile in Spanish</li>
+        <li>Record a 60&ndash;90 second Video Log introduction</li>
+      </ul>
+    </div>
+
+    <div class="card cult" style="margin-top:1.5rem;">
+      <div class="card-title">Nota Cultural</div>
+      <p>The United States has the second-largest Spanish-speaking population in the world &mdash; over 41 million native speakers. Spanish is the official language of 20 countries, and in the Pacific Northwest it is visible daily on menus, road signs, and community businesses &mdash; making what you learn here immediately relevant to life in Olympia.</p>
+    </div>
+
+    <div style="text-align:center;">
+      <img class="flyer" src="flyer.png" alt="Spanish Conversation Circle Flyer" onerror="this.style.display='none'">
+    </div>
+  </div>
+
+  <!-- IFRAME-BACKED SECTIONS -->
+  <div class="frame-wrap" id="fw1"><iframe id="frame1" name="frame1" title="Contenido A"></iframe></div>
+  <div class="frame-wrap" id="fw2"><iframe id="frame2" name="frame2" title="Contenido B"></iframe></div>
+
+  <!-- SUBMIT -->
+  <div class="submit-bar">
+    <h2>Entregar mi trabajo / Submit my work</h2>
+    <p>Escribe tu nombre arriba y completa los ejercicios. Luego haz clic en <strong>Generar reporte</strong>. Puedes <strong>descargar</strong> el archivo o <strong>copiar</strong> el texto y entregarlo a tu profesor.</p>
+    <div class="btn-row">
+      <button class="big-btn primary" onclick="generateReport()">Generar reporte</button>
+      <button class="big-btn ghost" onclick="downloadReport()">Descargar .txt</button>
+      <button class="big-btn ghost" onclick="copyReport()">Copiar</button>
+    </div>
+    <textarea id="report-out" rows="16" readonly></textarea>
+    <div class="hint" id="submit-hint"></div>
+  </div>
+
+</div>
+
+<template id="tpl-w1"><style>.nav,.chap-head,.prog-bar,.page-nav,.skip-link{display:none!important;}html,body{background:transparent!important;}body{padding:0!important;}.app{padding:0 0 1rem!important;margin:0!important;max-width:100%!important;}</style><style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f4f0;color:#1a1a1a;padding:1rem;}
+.app{max-width:800px;margin:0 auto;padding-bottom:3rem;}
+.chap-head{background:#0F6E56;padding:1.5rem 1.75rem 1.25rem;border-radius:12px;margin-bottom:1.25rem;}
+.chap-badge{font-size:11px;color:#5DCAA5;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+.chap-head h1{font-size:32px;font-weight:600;color:#E1F5EE;letter-spacing:-0.5px;}
+.chap-head p{font-size:13px;color:#5DCAA5;margin-top:6px;font-style:italic;}
+.prog-bar{height:5px;background:#e0ddd6;border-radius:3px;margin-bottom:1.25rem;overflow:hidden;}
+.prog-fill{height:100%;background:#1D9E75;border-radius:3px;transition:width 0.4s;width:0%;}
+.nav{display:flex;flex-wrap:wrap;gap:3px;background:#eae8e1;padding:4px;border-radius:10px;margin-bottom:1.5rem;}
+.tab{padding:7px 12px;font-size:12px;border:none;background:none;cursor:pointer;color:#666;border-radius:7px;transition:all 0.1s;}
+.tab:hover{background:#fff;color:#1a1a1a;}
+.tab.active{background:#fff;color:#0F6E56;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,0.1);}
+.sec{display:none;}.sec.active{display:block;}
+.card{background:#fff;border:1px solid #e8e5de;border-radius:12px;padding:1.25rem;margin-bottom:1rem;}
+.card-title{font-size:11px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:0.75rem;}
+.ctab{width:100%;border-collapse:collapse;}
+.ctab th{background:#0F6E56;color:#E1F5EE;padding:9px 13px;font-size:13px;font-weight:600;text-align:left;}
+.ctab td{padding:9px 13px;font-size:14px;border-bottom:1px solid #f0ede6;}
+.ctab tr:last-child td{border-bottom:none;}
+.pn{color:#888;font-size:13px;}
+.fm{font-style:italic;font-weight:600;color:#0F6E56;}
+.obj-list{list-style:none;}
+.obj-list li{padding:8px 0;font-size:14px;border-bottom:1px solid #f0ede6;display:flex;align-items:flex-start;gap:10px;line-height:1.5;}
+.obj-list li:last-child{border-bottom:none;}
+.obj-list li::before{content:"";width:7px;height:7px;background:#1D9E75;border-radius:50%;flex-shrink:0;margin-top:5px;}
+.sched{width:100%;border-collapse:collapse;font-size:13px;}
+.sched th{background:#f5f4f0;padding:9px 11px;text-align:left;font-weight:600;color:#666;border-bottom:1px solid #e8e5de;}
+.sched td{padding:9px 11px;border-bottom:1px solid #f0ede6;vertical-align:top;}
+.bdg{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600;}
+.b-in{background:#E1F5EE;color:#085041;}
+.b-pr{background:#FAEEDA;color:#633806;}
+.b-sg{background:#E6F1FB;color:#042C53;}
+.fc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px;}
+.fc{background:#fff;border:1px solid #ddd;border-radius:10px;padding:1rem;cursor:pointer;min-height:80px;display:flex;flex-direction:column;justify-content:center;transition:border-color 0.15s;}
+.fc:hover{border-color:#1D9E75;}
+.fc-fr{font-style:italic;color:#1a1a1a;font-size:13px;line-height:1.4;}
+.fc-bk{font-size:13px;color:#0F6E56;font-weight:600;display:none;margin-top:6px;}
+.fc-ht{font-size:11px;color:#aaa;margin-top:auto;padding-top:6px;}
+.fc.flipped .fc-bk{display:block;}
+.fc.flipped .fc-ht{display:none;}
+.fc.flipped{border-color:#1D9E75;background:#f0faf6;}
+.ex-s{margin-bottom:0.9rem;display:flex;align-items:baseline;gap:6px;font-size:14px;flex-wrap:wrap;line-height:1.8;}
+.ex-n{color:#aaa;min-width:20px;font-size:13px;}
+.blk{border:none;border-bottom:2px solid #ccc;background:none;font-size:14px;width:130px;color:#1a1a1a;padding:1px 4px;outline:none;font-family:inherit;}
+.blk:focus{border-bottom-color:#1D9E75;}
+.blk.ok{border-bottom-color:#639922;color:#3B6D11;}
+.blk.ng{border-bottom-color:#A32D2D;color:#A32D2D;}
+.chk-btn{padding:8px 18px;background:#0F6E56;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;margin-top:0.75rem;}
+.chk-btn:hover{background:#085041;}
+.rst-btn{padding:8px 14px;background:none;color:#666;border:1px solid #ddd;border-radius:8px;cursor:pointer;font-size:13px;margin-left:8px;margin-top:0.75rem;}
+.rst-btn:hover{color:#1a1a1a;border-color:#aaa;}
+.res-msg{margin-top:10px;font-size:13px;color:#555;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mi{padding:9px 11px;border:1px solid #ddd;border-radius:8px;cursor:pointer;font-size:12px;background:#fff;transition:all 0.12s;line-height:1.4;}
+.mi:hover{border-color:#1D9E75;}
+.mi.sel{border-color:#1D9E75;background:#f0faf6;color:#085041;}
+.mi.done{border-color:#639922;background:#f0f8e8;color:#3B6D11;pointer-events:none;}
+.mi.bad{border-color:#A32D2D;background:#fdf0f0;}
+.ex-box{background:#f5f4f0;border-left:3px solid #1D9E75;padding:10px 14px;margin:0.75rem 0;}
+.ex-box p{font-size:13px;color:#555;margin:2px 0;}
+.ojo{background:#FAEEDA;border-left:3px solid #EF9F27;padding:10px 14px;margin:0.75rem 0;}
+.ojo strong{color:#633806;font-size:12px;}
+.ojo p{font-size:13px;color:#854F0B;margin:4px 0 0;line-height:1.5;}
+.sec-title{font-size:19px;font-weight:600;color:#1a1a1a;margin-bottom:1rem;}
+.sec-sub{font-size:13px;color:#666;margin-top:-0.5rem;margin-bottom:1rem;}
+.res-lnk{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #f0ede6;font-size:13px;}
+.res-lnk:last-child{border-bottom:none;}
+.res-lnk .rl{font-weight:600;color:#1a1a1a;min-width:65px;}
+.res-lnk a{color:#0F6E56;text-decoration:none;}
+.res-lnk a:hover{text-decoration:underline;}
+.act-step{display:flex;gap:13px;padding:11px 0;border-bottom:1px solid #f0ede6;}
+.act-step:last-child{border-bottom:none;}
+.snum{width:30px;height:30px;border-radius:50%;background:#0F6E56;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0;}
+.sp-inp{width:100%;border:1px solid #ddd;border-radius:8px;padding:8px 11px;font-size:13px;background:#fff;color:#1a1a1a;font-family:inherit;outline:none;margin-top:5px;}
+.sp-inp:focus{border-color:#1D9E75;outline:2px solid #d0f0e4;}
+.sp-inp.ok{border-color:#639922;background:#f0f8e8;}
+.sp-inp.ng{border-color:#A32D2D;background:#fdf0f0;}
+.vowel-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:1rem;}
+.vowel-card{text-align:center;padding:13px 8px;background:#f5f4f0;border-radius:10px;}
+.snd-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.snd-item{padding:10px 13px;background:#f5f4f0;border-radius:10px;font-size:13px;}
+.q-pill{display:inline-block;padding:2px 9px;border-radius:20px;background:#f0faf6;color:#085041;font-size:12px;font-style:italic;font-weight:600;margin:3px 3px 3px 0;}
+.cult-card{background:#f0faf6;border-color:#9FE1CB;}
+</style>
+
+
+<div class="app">
+  <div class="chap-head">
+    <div class="chap-badge">Cap&iacute;tulo 1</div>
+    <h1>PALABRAS</h1>
+    <p>In this chapter, you will introduce yourself and write a profile for an online platform.</p>
+  </div>
+
+  <div class="prog-bar"><div class="prog-fill" id="pf"></div></div>
+
+  <div class="nav">
+    <button class="tab active" onclick="switchTab('ov',this)">Inicio</button>
+    <button class="tab" onclick="switchTab('vo',this)">Vocabulario</button>
+    <button class="tab" onclick="switchTab('se',this)">SER</button>
+    <button class="tab" onclick="switchTab('ll',this)">LLAMARSE</button>
+    <button class="tab" onclick="switchTab('pr',this)">Pronunciaci&oacute;n</button>
+    <button class="tab" onclick="switchTab('ej',this)">Ejercicios</button>
+    <button class="tab" onclick="switchTab('ac',this)">Actividad Oral</button>
+  </div>
+
+  <!-- INICIO -->
+  <div class="sec" id="sec-ov">
+    <h2 class="sec-title">Learning Objectives / Objetivos del cap&iacute;tulo</h2>
+    <div class="card">
+      <ul class="obj-list">
+        <li>Introduce yourself and others using <em>llamarse</em> and <em>ser</em></li>
+        <li>Use subject pronouns correctly in spoken and written Spanish</li>
+        <li>Conjugate regular -ar, -er, and -ir verbs in the present tense</li>
+        <li>Apply definite and indefinite articles with gendered nouns</li>
+        <li>Identify and produce all sounds of the Spanish alphabet</li>
+        <li>Use essential classroom phrases and courtesy expressions</li>
+        <li>Write a 75&ndash;100 word online platform profile in Spanish</li>
+      </ul>
+    </div>
+    <h2 class="sec-title" style="margin-top:1.5rem;">Semana 1 &mdash; Week 1 Schedule</h2>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table class="sched">
+        <thead><tr><th>Day</th><th>Type</th><th>Focus</th><th>Homework</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Weekend</strong></td><td><span class="bdg b-sg">Self-Guided</span></td><td>Vocab 1 + Alphabet</td><td>Review Initial Material</td></tr>
+          <tr><td><strong>Monday</strong></td><td><span class="bdg b-in">In-Class</span></td><td>Classroom Spanish + ser</td><td>Study &lsquo;ser&rsquo; conjugation</td></tr>
+          <tr><td><strong>Tuesday</strong></td><td><span class="bdg b-pr">Practice</span></td><td>llamarse + Pronunciation</td><td>Write 5 sentences using ser and llamarse</td></tr>
+          <tr><td><strong>Wednesday</strong></td><td><span class="bdg b-in">In-Class</span></td><td>Oral Introductions</td><td>SpanishDict + Weekly Quiz</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card cult-card" style="margin-top:1rem;">
+      <div class="card-title" style="color:#085041;">Nota Cultural</div>
+      <p style="font-size:14px;color:#085041;line-height:1.7;">The United States has the second-largest Spanish-speaking population in the world &mdash; over 41 million native speakers. Learning Spanish connects you to over 500 million speakers across 20 countries.</p>
+    </div>
+  </div>
+
+  <!-- VOCABULARIO -->
+  <div class="sec" id="sec-vo">
+    <h2 class="sec-title">Vocabulario 1 &mdash; En la clase de espa&ntilde;ol</h2>
+    <p class="sec-sub">Click each card to reveal the translation. / Haz clic para ver la traducci&oacute;n.</p>
+    <div class="fc-grid" id="fc-grid"></div>
+    <h2 class="sec-title" style="margin-top:1.5rem;">Recursos en l&iacute;nea / Online Resources</h2>
+    <div class="card">
+      <div class="res-lnk"><span class="rl">Video</span><a href="https://www.youtube.com/watch?v=ZAp28thZsKs" target="_blank">Spanish Alphabet &mdash; Se&ntilde;or Jordan</a></div>
+      <div class="res-lnk"><span class="rl">Practice</span><a href="https://studyspanish.com/alphabet" target="_blank">Interactive Alphabet Practice &mdash; StudySpanish.com</a></div>
+      <div class="res-lnk"><span class="rl">Video</span><a href="https://www.youtube.com/watch?v=lyy8pgKQHgY" target="_blank">The Verb Ser &ndash; Present Tense &mdash; maestrokaplan</a></div>
+      <div class="res-lnk"><span class="rl">Practice</span><a href="https://conjuguemos.com/verb/2035489" target="_blank">Ser Conjugation Drills &mdash; Conjuguemos</a></div>
+      <div class="res-lnk"><span class="rl">Quizlet</span><a href="https://quizlet.com/search?query=spanish+classroom+phrases+ser+llamarse&amp;type=sets" target="_blank">Classroom Phrases Quiz &mdash; Quizlet</a></div>
+      <div class="res-lnk"><span class="rl">Guide</span><a href="https://www.spanishdict.com/guide/spanish-alphabet-pronunciation" target="_blank">Alphabet &amp; Pronunciation &mdash; SpanishDict</a></div>
+    </div>
+  </div>
+
+  <!-- SER -->
+  <div class="sec" id="sec-se">
+    <h2 class="sec-title">Gram&aacute;tica 1 &mdash; Pronombres + SER</h2>
+    <div class="card">
+      <div class="card-title">Subject Pronouns / Pronombres personales</div>
+      <table class="ctab">
+        <thead><tr><th>Singular</th><th>Plural</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pn">yo</span> &mdash; I</td><td><span class="pn">nosotros / nosotras</span> &mdash; we</td></tr>
+          <tr><td><span class="pn">t&uacute;</span> &mdash; you (informal)</td><td rowspan="2"><span class="pn">ellos / ellas / ustedes</span> &mdash; they / you all</td></tr>
+          <tr><td><span class="pn">&eacute;l / ella / usted</span> &mdash; he / she / you (formal)</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;color:#aaa;margin-top:10px;font-style:italic;">Note: In this course we use <em>ustedes</em> for all &lsquo;you all&rsquo; contexts &mdash; standard throughout Latin America.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">The Verb SER &mdash; To Be (identity, origin, profession, stable descriptions)</div>
+      <table class="ctab">
+        <thead><tr><th colspan="2">ser</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pn">yo</span> <span class="fm">soy</span></td><td><span class="pn">nosotros/as</span> <span class="fm">somos</span></td></tr>
+          <tr><td><span class="pn">t&uacute;</span> <span class="fm">eres</span></td><td><span class="pn">ellos/Uds.</span> <span class="fm">son</span></td></tr>
+          <tr><td><span class="pn">&eacute;l/ella/Ud.</span> <span class="fm">es</span></td><td></td></tr>
+        </tbody>
+      </table>
+      <div class="ex-box">
+        <p>Soy estudiante de espa&ntilde;ol. &rarr; <em>I am a Spanish student.</em></p>
+        <p>Ella es de M&eacute;xico. &rarr; <em>She is from Mexico.</em></p>
+        <p>Somos compa&ntilde;eros de clase. &rarr; <em>We are classmates.</em></p>
+      </div>
+      <div class="ojo">
+        <strong>&iexcl;OJO!</strong>
+        <p>Articles are omitted with professions after ser: <em>Soy estudiante</em> &mdash; NOT <em>Soy un estudiante</em>. Articles ARE used when the noun is modified: <em>Soy un estudiante muy dedicado.</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LLAMARSE -->
+  <div class="sec" id="sec-ll">
+    <h2 class="sec-title">Gram&aacute;tica 2 &mdash; LLAMARSE</h2>
+    <div class="card">
+      <div class="card-title">The Verb LLAMARSE &mdash; To Be Named (reflexive verb)</div>
+      <table class="ctab">
+        <thead><tr><th colspan="2">llamarse</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pn">yo</span> <span class="fm">me llamo</span></td><td><span class="pn">nosotros/as</span> <span class="fm">nos llamamos</span></td></tr>
+          <tr><td><span class="pn">t&uacute;</span> <span class="fm">te llamas</span></td><td><span class="pn">ellos/Uds.</span> <span class="fm">se llaman</span></td></tr>
+          <tr><td><span class="pn">&eacute;l/ella/Ud.</span> <span class="fm">se llama</span></td><td></td></tr>
+        </tbody>
+      </table>
+      <div class="ex-box">
+        <p>&iquest;C&oacute;mo te llamas? &rarr; <em>What is your name? (informal)</em></p>
+        <p>&iquest;C&oacute;mo se llama usted? &rarr; <em>What is your name? (formal)</em></p>
+        <p>Me llamo Carlos. &rarr; <em>My name is Carlos.</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRONUNCIACION -->
+  <div class="sec" id="sec-pr">
+    <h2 class="sec-title">Pronunciaci&oacute;n &mdash; El alfabeto espa&ntilde;ol</h2>
+    <div class="card">
+      <div class="card-title">Spanish Vowels &mdash; Always pure, never glide like English</div>
+      <div class="vowel-grid">
+        <div class="vowel-card"><div style="font-size:24px;font-weight:700;color:#0F6E56;">a</div><div style="font-size:12px;color:#888;margin-top:4px;">ah</div></div>
+        <div class="vowel-card"><div style="font-size:24px;font-weight:700;color:#0F6E56;">e</div><div style="font-size:12px;color:#888;margin-top:4px;">eh</div></div>
+        <div class="vowel-card"><div style="font-size:24px;font-weight:700;color:#0F6E56;">i</div><div style="font-size:12px;color:#888;margin-top:4px;">ee</div></div>
+        <div class="vowel-card"><div style="font-size:24px;font-weight:700;color:#0F6E56;">o</div><div style="font-size:12px;color:#888;margin-top:4px;">oh</div></div>
+        <div class="vowel-card"><div style="font-size:24px;font-weight:700;color:#0F6E56;">u</div><div style="font-size:12px;color:#888;margin-top:4px;">oo</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Special Sounds / Sonidos especiales</div>
+      <div class="snd-grid">
+        <div class="snd-item"><span style="font-size:17px;font-weight:700;color:#0F6E56;">&ntilde;</span><span style="color:#555;margin-left:9px;">&ldquo;ny&rdquo; &mdash; like <em>canyon</em></span></div>
+        <div class="snd-item"><span style="font-size:17px;font-weight:700;color:#0F6E56;">ll</span><span style="color:#555;margin-left:9px;">&ldquo;y&rdquo; sound</span></div>
+        <div class="snd-item"><span style="font-size:17px;font-weight:700;color:#0F6E56;">j</span><span style="color:#555;margin-left:9px;">&ldquo;h&rdquo; &mdash; breathy</span></div>
+        <div class="snd-item"><span style="font-size:17px;font-weight:700;color:#0F6E56;">rr</span><span style="color:#555;margin-left:9px;">trilled r</span></div>
+        <div class="snd-item"><span style="font-size:17px;font-weight:700;color:#0F6E56;">h</span><span style="color:#555;margin-left:9px;">always silent</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Letter Names &mdash; Ejemplo</div>
+      <p style="font-size:14px;color:#555;margin-bottom:10px;"><em>hola</em> &rarr; <strong style="color:#1a1a1a;">hache &ndash; o &ndash; ele &ndash; a</strong></p>
+      <p style="font-size:13px;color:#555;">Key letter names:
+        <span class="q-pill">a</span><span class="q-pill">be</span><span class="q-pill">ce</span><span class="q-pill">de</span><span class="q-pill">e</span><span class="q-pill">efe</span><span class="q-pill">ge</span><span class="q-pill">hache</span><span class="q-pill">i</span><span class="q-pill">jota</span><span class="q-pill">ka</span><span class="q-pill">ele</span><span class="q-pill">eme</span><span class="q-pill">ene</span><span class="q-pill">e&ntilde;e</span><span class="q-pill">o</span><span class="q-pill">pe</span><span class="q-pill">cu</span><span class="q-pill">erre</span><span class="q-pill">ese</span><span class="q-pill">te</span><span class="q-pill">u</span><span class="q-pill">ve</span><span class="q-pill">equis</span><span class="q-pill">ye</span><span class="q-pill">zeta</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- EJERCICIOS -->
+  <div class="sec" id="sec-ej">
+    <h2 class="sec-title">Ejercicios</h2>
+
+    <div class="card">
+      <div class="card-title">Ejercicio 1 &mdash; Emparejamiento / Matching</div>
+      <p style="font-size:13px;color:#666;margin-bottom:1rem;">Click a Spanish phrase, then click its English match. / Haz clic en la frase espa&ntilde;ola y luego en su traducci&oacute;n.</p>
+      <div id="match-cont"></div>
+      <div style="margin-top:0.75rem;">
+        <button class="rst-btn" style="margin-left:0;" onclick="resetMatch()">Reset</button>
+      </div>
+      <div class="res-msg" id="match-score"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Ejercicio 2 &mdash; Tabla de conjugaci&oacute;n: SER</div>
+      <p style="font-size:13px;color:#666;margin-bottom:1rem;">Complete from memory. / Completa de memoria.</p>
+      <table class="ctab">
+        <thead><tr><th colspan="2">ser</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pn">yo</span> <input class="blk" id="s1" data-answer="soy" placeholder="___"></td><td><span class="pn">nosotros/as</span> <input class="blk" id="s2" data-answer="somos" placeholder="___"></td></tr>
+          <tr><td><span class="pn">t&uacute;</span> <input class="blk" id="s3" data-answer="eres" placeholder="___"></td><td><span class="pn">ellos/Uds.</span> <input class="blk" id="s4" data-answer="son" placeholder="___"></td></tr>
+          <tr><td><span class="pn">&eacute;l/ella/Ud.</span> <input class="blk" id="s5" data-answer="es" placeholder="___"></td><td></td></tr>
+        </tbody>
+      </table>
+      <button class="chk-btn" onclick="checkBlanks('s1,s2,s3,s4,s5','sc2')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('s1,s2,s3,s4,s5','sc2')">Reset</button>
+      <div class="res-msg" id="sc2"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Ejercicio 3 &mdash; Completar con SER</div>
+      <p style="font-size:13px;color:#666;margin-bottom:1rem;">Use the correct form of ser.</p>
+      <div class="ex-s"><span class="ex-n">1.</span>Yo <input class="blk" id="e1" data-answer="soy"> estudiante de espa&ntilde;ol en SPSCC.</div>
+      <div class="ex-s"><span class="ex-n">2.</span>&iquest;De d&oacute;nde <input class="blk" id="e2" data-answer="eres"> t&uacute;?</div>
+      <div class="ex-s"><span class="ex-n">3.</span>Ella <input class="blk" id="e3" data-answer="es"> profesora de ling&uuml;&iacute;stica.</div>
+      <div class="ex-s"><span class="ex-n">4.</span>Nosotros <input class="blk" id="e4" data-answer="somos"> compa&ntilde;eros de clase.</div>
+      <div class="ex-s"><span class="ex-n">5.</span>Los estudiantes <input class="blk" id="e5" data-answer="son"> muy trabajadores.</div>
+      <div class="ex-s"><span class="ex-n">6.</span>&iquest;<input class="blk" id="e6" data-answer="son"> ustedes de habla hispana?</div>
+      <div class="ex-s"><span class="ex-n">7.</span>&Eacute;l <input class="blk" id="e7" data-answer="es"> de origen cubano.</div>
+      <div class="ex-s"><span class="ex-n">8.</span>Yo <input class="blk" id="e8" data-answer="soy"> de San Francisco, California.</div>
+      <button class="chk-btn" onclick="checkBlanks('e1,e2,e3,e4,e5,e6,e7,e8','sc3')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('e1,e2,e3,e4,e5,e6,e7,e8','sc3')">Reset</button>
+      <div class="res-msg" id="sc3"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Ejercicio 4 &mdash; LLAMARSE: Di&aacute;logos</div>
+      <p style="font-size:13px;color:#666;margin-bottom:1rem;">Fill in with the correct form of llamarse.</p>
+      <div class="ex-s"><span class="ex-n">1.</span>&iquest;C&oacute;mo <input class="blk" id="l1" data-answer="te llamas" style="width:115px;">? &mdash; Yo me llamo Valentina.</div>
+      <div class="ex-s"><span class="ex-n">2.</span>&iquest;Y c&oacute;mo <input class="blk" id="l2" data-answer="se llama" style="width:110px;"> tu compa&ntilde;era? &mdash; Ella se llama Isabel.</div>
+      <div class="ex-s"><span class="ex-n">3.</span>Nosotros <input class="blk" id="l3" data-answer="nos llamamos" style="width:145px;"> Marcos y Luc&iacute;a.</div>
+      <div class="ex-s"><span class="ex-n">4.</span>Los nuevos estudiantes <input class="blk" id="l4" data-answer="se llaman" style="width:110px;"> Pedro, Sof&iacute;a y Daniel.</div>
+      <div class="ex-s"><span class="ex-n">5.</span>&iquest;C&oacute;mo <input class="blk" id="l5" data-answer="se llama" style="width:110px;"> usted? &mdash; Yo me llamo el doctor Ram&iacute;rez.</div>
+      <button class="chk-btn" onclick="checkBlanks('l1,l2,l3,l4,l5','sc4')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('l1,l2,l3,l4,l5','sc4')">Reset</button>
+      <div class="res-msg" id="sc4"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Ejercicio 5 &mdash; El alfabeto: Spelling Practice</div>
+      <p style="font-size:13px;color:#666;margin-bottom:4px;">Type the Spanish letter names separated by dashes. / Escribe los nombres de las letras separados por guiones.</p>
+      <p style="font-size:12px;color:#aaa;margin-bottom:1rem;">Example: <em>hola</em> &rarr; hache &ndash; o &ndash; ele &ndash; a</p>
+      <div id="spell-cont"></div>
+      <button class="chk-btn" onclick="checkSpelling()">Check Spelling</button>
+      <button class="rst-btn" onclick="resetSpelling()">Reset</button>
+      <div class="res-msg" id="sc5"></div>
+    </div>
+  </div>
+
+  <!-- ACTIVIDAD -->
+  <div class="sec" id="sec-ac">
+    <h2 class="sec-title">Actividad Oral &mdash; &iexcl;Con&oacute;cete!</h2>
+    <p class="sec-sub">Class Introduction Circle &mdash; Wednesday in-class activity</p>
+    <div class="card">
+      <div class="card-title">Instrucciones / Instructions</div>
+      <div class="act-step">
+        <div class="snum">1</div>
+        <div><p style="font-size:14px;font-weight:600;margin-bottom:4px;">Introduce yourself</p><p style="font-size:13px;color:#555;font-style:italic;">&ldquo;Hola, me llamo [name]. Soy de [city]. Estudio [subject] en SPSCC.&rdquo;</p></div>
+      </div>
+      <div class="act-step">
+        <div class="snum">2</div>
+        <div><p style="font-size:14px;font-weight:600;margin-bottom:4px;">Introduce your neighbor</p><p style="font-size:13px;color:#555;font-style:italic;">&ldquo;&Eacute;l/Ella se llama [name]. Es de [place]. Estudia [major].&rdquo;</p></div>
+      </div>
+      <div class="act-step">
+        <div class="snum">3</div>
+        <div><p style="font-size:14px;font-weight:600;margin-bottom:4px;">Challenge Round</p><p style="font-size:13px;color:#555;">Introduce someone from memory &mdash; no notes allowed. Partner checks accuracy.</p></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Questions to Ask / Preguntas para hacer</div>
+      <div class="snd-grid" style="margin-top:0.5rem;">
+        <div style="padding:11px 14px;background:#f5f4f0;border-radius:10px;"><p style="font-style:italic;font-weight:600;font-size:14px;color:#0F6E56;">&iquest;C&oacute;mo te llamas?</p><p style="font-size:12px;color:#666;margin-top:3px;">What is your name?</p></div>
+        <div style="padding:11px 14px;background:#f5f4f0;border-radius:10px;"><p style="font-style:italic;font-weight:600;font-size:14px;color:#0F6E56;">&iquest;De d&oacute;nde eres?</p><p style="font-size:12px;color:#666;margin-top:3px;">Where are you from?</p></div>
+        <div style="padding:11px 14px;background:#f5f4f0;border-radius:10px;"><p style="font-style:italic;font-weight:600;font-size:13px;color:#0F6E56;">&iquest;Qu&eacute; estudias o trabajas?</p><p style="font-size:12px;color:#666;margin-top:3px;">What do you study or do for work?</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+var vocabData = [
+  {es:'&iquest;C&oacute;mo se dice...?', en:'How do you say...?'},
+  {es:'&iquest;C&oacute;mo se escribe...?', en:'How do you spell...?'},
+  {es:'&iquest;Puede(s) repetir, por favor?', en:'Can you repeat, please?'},
+  {es:'No entiendo.', en:"I don't understand."},
+  {es:'M&aacute;s despacio, por favor.', en:'More slowly, please.'},
+  {es:'&iquest;Qu&eacute; significa...?', en:'What does ... mean?'},
+  {es:'Tengo una pregunta.', en:'I have a question.'},
+  {es:'&iquest;En qu&eacute; p&aacute;gina estamos?', en:'What page are we on?'},
+  {es:'Por favor / Gracias / De nada', en:"Please / Thank you / You're welcome"},
+  {es:'Perd&oacute;n / Disculpe', en:"Excuse me / I'm sorry"},
+  {es:'&iexcl;Muy bien! / &iexcl;Excelente!', en:'Very good! / Excellent!'},
+  {es:'Repite, por favor.', en:'Repeat, please.'}
+];
+
+var g = document.getElementById('fc-grid');
+vocabData.forEach(function(v) {
+  var d = document.createElement('div');
+  d.className = 'fc';
+  d.innerHTML = '<div class="fc-fr">' + v.es + '</div><div class="fc-bk">' + v.en + '</div><div class="fc-ht">Click to reveal</div>';
+  d.onclick = function() { this.classList.toggle('flipped'); };
+  g.appendChild(d);
+});
+
+function switchTab(tab, el) {
+  document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelectorAll('.sec').forEach(function(s) { s.classList.remove('active'); });
+  el.classList.add('active');
+  document.getElementById('sec-' + tab).classList.add('active');
+}
+
+var matchData = [
+  {es:"&iquest;C&oacute;mo se dice 'homework'?", en:"How do you say 'homework'?", id:'d'},
+  {es:'No entiendo la pregunta.', en:"I don't understand the question.", id:'b'},
+  {es:'&iquest;Puede repetir, por favor?', en:'Can you repeat, please?', id:'e'},
+  {es:"&iquest;Qu&eacute; significa 'madrugada'?", en:"What does 'madrugada' mean?", id:'f'},
+  {es:'M&aacute;s despacio, por favor.', en:'More slowly, please.', id:'c'},
+  {es:'Tengo una pregunta.', en:'I have a question.', id:'j'},
+  {es:'&iquest;En qu&eacute; p&aacute;gina estamos?', en:'What page are we on?', id:'h'},
+  {es:'De nada.', en:"You're welcome.", id:'a'},
+  {es:'Perd&oacute;n, llego tarde.', en:"Excuse me, I'm late.", id:'i'},
+  {es:'&iexcl;Muy bien!', en:'Very good!', id:'g'}
+];
+
+var selEs = null, selEn = null, matched = 0;
+
+function buildMatch() {
+  var c = document.getElementById('match-cont');
+  var sh = matchData.slice().sort(function() { return Math.random() - 0.5; });
+  var esHtml = matchData.map(function(m, i) {
+    return '<div class="mi" id="mes-' + i + '" data-id="' + m.id + '" onclick="selSpanish(this)">' + (i+1) + '. ' + m.es + '</div>';
+  }).join('');
+  var enHtml = sh.map(function(m) {
+    return '<div class="mi" id="men-' + m.id + '" data-id="' + m.id + '" onclick="selEnglish(this)">' + m.en + '</div>';
+  }).join('');
+  c.innerHTML = '<div class="match-cols"><div id="col-es">' + esHtml + '</div><div id="col-en">' + enHtml + '</div></div>';
+  selEs = null; selEn = null; matched = 0;
+  document.getElementById('match-score').textContent = '';
+}
+
+function selSpanish(el) {
+  if (el.classList.contains('done')) return;
+  document.querySelectorAll('#col-es .mi').forEach(function(i) { i.classList.remove('sel'); });
+  el.classList.add('sel'); selEs = el; tryMatch();
+}
+function selEnglish(el) {
+  if (el.classList.contains('done')) return;
+  document.querySelectorAll('#col-en .mi').forEach(function(i) { i.classList.remove('sel','bad'); });
+  el.classList.add('sel'); selEn = el; tryMatch();
+}
+function tryMatch() {
+  if (!selEs || !selEn) return;
+  if (selEs.dataset.id === selEn.dataset.id) {
+    selEs.classList.remove('sel'); selEs.classList.add('done');
+    selEn.classList.remove('sel'); selEn.classList.add('done');
+    matched++;
+    if (matched === matchData.length) {
+      document.getElementById('match-score').textContent = 'Excelente! All ' + matched + ' matched correctly!';
+      markDone('ex1');
+    }
+  } else {
+    var bad = selEn;
+    setTimeout(function() { bad.classList.remove('bad','sel'); }, 700);
+    selEn.classList.add('bad');
+  }
+  selEs = null; selEn = null;
+}
+function resetMatch() { selEs = null; selEn = null; buildMatch(); }
+buildMatch();
+
+function checkBlanks(ids, scoreId) {
+  var idList = ids.split(','), score = 0;
+  idList.forEach(function(id) {
+    var el = document.getElementById(id);
+    var ua = el.value.trim().toLowerCase();
+    var ca = el.dataset.answer.toLowerCase();
+    if (ua === ca) { el.classList.remove('ng'); el.classList.add('ok'); score++; }
+    else { el.classList.remove('ok'); el.classList.add('ng'); }
+  });
+  var total = idList.length;
+  var msg = score + ' / ' + total + ' correct';
+  if (score === total) { msg += ' — Perfecto!'; markDone(scoreId); }
+  document.getElementById(scoreId).textContent = msg;
+}
+function resetBlanks(ids, scoreId) {
+  ids.split(',').forEach(function(id) {
+    var el = document.getElementById(id); el.value = ''; el.classList.remove('ok','ng');
+  });
+  if (scoreId) document.getElementById(scoreId).textContent = '';
+}
+
+var spellData = [
+  {word:'clase', answer:'ce \u2013 ele \u2013 a \u2013 ese \u2013 e'},
+  {word:'hola', answer:'hache \u2013 o \u2013 ele \u2013 a'},
+  {word:'espa\u00f1ol', answer:'e \u2013 ese \u2013 pe \u2013 a \u2013 e\u00f1e \u2013 o \u2013 ele'},
+  {word:'universidad', answer:'u \u2013 ene \u2013 i \u2013 ve \u2013 e \u2013 ere \u2013 ese \u2013 i \u2013 de \u2013 a \u2013 de'},
+  {word:'mujer', answer:'eme \u2013 u \u2013 jota \u2013 e \u2013 ere'}
+];
+
+function buildSpelling() {
+  var el = document.getElementById('spell-cont');
+  el.innerHTML = spellData.map(function(w, i) {
+    return '<div style="margin-bottom:1rem;"><div style="font-size:14px;"><span style="color:#aaa;">' + (i+1) + '.</span> <em style="font-weight:600;">' + w.word + '</em></div><input class="sp-inp" id="sp' + i + '" placeholder="e.g. ce \u2013 ele \u2013 a \u2013 ese \u2013 e" data-answer="' + w.answer + '"></div>';
+  }).join('');
+}
+function checkSpelling() {
+  var score = 0;
+  spellData.forEach(function(w, i) {
+    var el = document.getElementById('sp' + i);
+    var ua = el.value.trim().toLowerCase().replace(/\s*[-\u2013]\s*/g, ' \u2013 ').replace(/\s+/g,' ');
+    var ca = w.answer.toLowerCase();
+    if (ua === ca) { el.classList.add('ok'); el.classList.remove('ng'); score++; }
+    else { el.classList.add('ng'); el.classList.remove('ok'); }
+  });
+  var msg = score + ' / ' + spellData.length + ' correct';
+  if (score === spellData.length) { msg += ' — Excelente!'; markDone('sc5'); }
+  document.getElementById('sc5').textContent = msg;
+}
+function resetSpelling() {
+  spellData.forEach(function(w, i) {
+    var el = document.getElementById('sp' + i); el.value = ''; el.classList.remove('ok','ng');
+  });
+  document.getElementById('sc5').textContent = '';
+}
+buildSpelling();
+
+var done = {};
+function markDone(id) {
+  done[id] = true;
+  var count = Object.keys(done).length;
+  document.getElementById('pf').style.width = Math.round(count / 5 * 100) + '%';
+}
+</script>
+
+<script>
+(function(){
+  function norm(s){return (s||'').trim().toLowerCase();}
+  function isCorrect(el){
+    var val=norm(el.value), ans=norm(el.dataset.answer||'');
+    if(!ans) return null;
+    if(ans.indexOf(' / ')>-1) return ans.split(' / ').indexOf(val)>-1;
+    if(ans.indexOf('–')>-1){ var n=function(x){return x.replace(/\s*[-–]\s*/g,' ').replace(/\s+/g,' ').trim();}; return n(val)===n(ans); }
+    return val===ans;
+  }
+  function cardTitle(el){
+    var c=el.closest('.card');
+    if(c){var t=c.querySelector('.card-title'); if(t) return t.textContent.trim();}
+    var s=el.closest('.sec'), h=s?s.querySelector('.sec-title'):null;
+    return h?h.textContent.trim():'Ejercicio';
+  }
+  function harvest(){
+    var out={blanks:[],script:null,checks:[],scores:[]};
+    document.querySelectorAll('input[data-answer]').forEach(function(el){
+      out.blanks.push({card:cardTitle(el),value:el.value.trim(),answer:el.dataset.answer,correct:isCorrect(el)});
+    });
+    var vt=document.getElementById('vl-text'); if(vt) out.script=vt.value;
+    document.querySelectorAll('input[type=checkbox]').forEach(function(cb){
+      var lb=document.querySelector('label[for="'+cb.id+'"]');
+      out.checks.push({label:lb?lb.textContent.trim():cb.id,checked:cb.checked});
+    });
+    [['match-score','Emparejamiento / Matching'],['sc-sort','Clasificar verbos / Sort'],
+     ['drill-prog','Conjugation Drill'],['gq-score','Noun Gender Quiz']].forEach(function(g){
+      var m=document.getElementById(g[0]); if(m&&m.textContent.trim()) out.scores.push({card:g[1],msg:m.textContent.trim()});
+    });
+    return out;
+  }
+  function postHeight(){ try{ parent.postMessage({type:'HEIGHT',frame:window.name,h:document.documentElement.scrollHeight},'*'); }catch(e){} }
+  window.addEventListener('load',postHeight);
+  setInterval(postHeight,300);
+  window.addEventListener('message',function(e){
+    var d=e.data; if(!d) return;
+    if(d.type==='SHOW'){
+      document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('active');});
+      (d.secs||[]).forEach(function(id){var el=document.getElementById('sec-'+id); if(el) el.classList.add('active');});
+      postHeight(); setTimeout(postHeight,80);
+    }
+    if(d.type==='HARVEST'){ parent.postMessage({type:'HARVEST_RESULT',week:d.week,data:harvest()},'*'); }
+  });
+})();
+</script>
+</template>
+<template id="tpl-w2"><style>.nav,.chap-head,.prog-bar,.page-nav,.skip-link{display:none!important;}html,body{background:transparent!important;}body{padding:0!important;}.app{padding:0 0 1rem!important;margin:0!important;max-width:100%!important;}</style><style>
+/* === RESET === */
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;background:#fff;color:#1a1a1a;}
+
+/* === SKIP LINK === */
+.skip-link{position:absolute;left:-999px;width:1px;height:1px;overflow:hidden;}
+.skip-link:focus{position:fixed;top:1rem;left:1rem;width:auto;height:auto;padding:10px 18px;background:#0a5c46;color:#fff;font-weight:700;font-size:15px;border-radius:8px;z-index:9999;text-decoration:none;}
+
+/* === GLOBAL FOCUS === */
+*:focus-visible{outline:3px solid #0a5c46;outline-offset:3px;}
+
+/* === LAYOUT === */
+.app{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 5rem;}
+
+/* === HEADER === */
+.chap-head{background:#0a5c46;padding:1.5rem;border-radius:12px;margin-bottom:1.5rem;}
+.chap-badge{font-size:12px;font-weight:700;color:#c8f5e5;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+.chap-head h1{font-size:30px;font-weight:800;color:#fff;line-height:1.2;}
+.chap-head p{font-size:15px;color:#c8f5e5;margin-top:6px;font-style:italic;}
+
+/* === PROGRESS BAR === */
+.prog-bar{height:8px;background:#e5e5e5;border-radius:4px;margin-bottom:1.75rem;overflow:hidden;}
+.prog-fill{height:100%;background:#138a60;border-radius:4px;transition:width 0.4s ease;}
+
+/* === NAV TABS === */
+.nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.75rem;}
+.tab{padding:10px 16px;font-size:14px;font-weight:600;color:#444;background:#fff;border:2px solid #ccc;border-radius:8px;cursor:pointer;transition:all 0.15s;font-family:inherit;min-height:44px;}
+.tab:hover{border-color:#0a5c46;color:#0a5c46;background:#f0fdf8;}
+.tab.active{background:#0a5c46;color:#fff;border-color:#0a5c46;}
+
+/* === SECTIONS === */
+.sec{display:none;}.sec.active{display:block;}
+
+/* === CARDS === */
+.card{background:#fff;border:1.5px solid #e0e0e0;border-radius:12px;padding:1.5rem;margin-bottom:1.25rem;}
+.card-title{font-size:11px;font-weight:800;color:#555;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:0.9rem;}
+.cult-card{background:#e8f8f0;border-color:#7dd6b0;}
+
+/* === SECTION HEADINGS === */
+.sec-title{font-size:20px;font-weight:800;color:#1a1a1a;margin-bottom:0.75rem;}
+.sec-sub{font-size:14px;color:#444;margin-top:-0.25rem;margin-bottom:1.25rem;line-height:1.5;}
+
+/* === TABLES === */
+.ctab{width:100%;border-collapse:collapse;}
+.ctab th{background:#0a5c46;color:#fff;padding:10px 14px;font-size:14px;font-weight:700;text-align:left;}
+.ctab td{padding:10px 14px;font-size:15px;border-bottom:1px solid #e8e8e8;color:#1a1a1a;}
+.ctab tr:last-child td{border-bottom:none;}
+.pn{color:#444;font-size:14px;}
+.fm{font-style:italic;font-weight:600;color:#1a1a1a;}
+
+.sched{width:100%;border-collapse:collapse;}
+.sched th{background:#f0f0f0;padding:10px 12px;text-align:left;font-weight:700;font-size:14px;color:#1a1a1a;border-bottom:2px solid #ccc;}
+.sched td{padding:10px 12px;border-bottom:1px solid #e8e8e8;font-size:14px;color:#1a1a1a;vertical-align:top;line-height:1.5;}
+
+/* === BADGES === */
+.bdg{display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700;}
+.b-in{background:#d4f0e3;color:#0a3d28;}
+.b-pr{background:#fde8c8;color:#6b3a00;}
+.b-sg{background:#dbeafe;color:#1e3a6e;}
+
+/* === OBJ LIST === */
+.obj-list{list-style:none;}
+.obj-list li{display:flex;align-items:flex-start;gap:12px;padding:9px 0;font-size:15px;color:#1a1a1a;border-bottom:1px solid #e8e8e8;line-height:1.5;}
+.obj-list li:last-child{border-bottom:none;}
+.obj-list li::before{content:"";width:8px;height:8px;min-width:8px;background:#138a60;border-radius:50%;margin-top:6px;}
+
+/* === INFO BOXES === */
+.ex-box{background:#f3faf6;border-left:4px solid #138a60;padding:12px 16px;margin:0.75rem 0;border-radius:0 6px 6px 0;}
+.ex-box p{font-size:14px;color:#1a1a1a;margin:3px 0;line-height:1.5;}
+.ojo{background:#fff8e8;border-left:4px solid #d97706;padding:12px 16px;margin:0.75rem 0;border-radius:0 6px 6px 0;}
+.ojo strong{color:#92400e;font-size:13px;}
+.ojo p{font-size:14px;color:#78350f;margin:5px 0 0;line-height:1.5;}
+
+/* === FLASHCARDS === */
+.fc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:10px;}
+.fc{background:#fff;border:2px solid #ccc;border-radius:10px;padding:1rem;cursor:pointer;min-height:90px;display:flex;flex-direction:column;justify-content:center;transition:all 0.15s;}
+.fc:hover{border-color:#0a5c46;}
+.fc-fr{font-style:italic;font-size:15px;font-weight:600;color:#1a1a1a;}
+.fc-bk{font-size:15px;color:#0a5c46;font-weight:700;display:none;margin-top:6px;}
+.fc-ht{font-size:12px;color:#666;margin-top:auto;padding-top:6px;}
+.fc.flipped{border-color:#0a5c46;background:#f0fdf8;}
+.fc.flipped .fc-bk{display:block;}
+.fc.flipped .fc-ht{display:none;}
+
+/* === MATCHING GAME === */
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.mi{padding:10px 12px;border:2px solid #ccc;border-radius:8px;cursor:pointer;font-size:14px;color:#1a1a1a;background:#fff;transition:all 0.15s;line-height:1.5;min-height:44px;display:flex;align-items:center;}
+.mi:hover{border-color:#0a5c46;}
+.mi.sel{border-color:#0a5c46;background:#e8f8f0;color:#0a3d28;font-weight:700;}
+.mi.done{border-color:#1a7a3a;background:#d4f0e3;color:#0a3d28;font-weight:600;cursor:default;}
+.mi.bad{border-color:#dc2626;background:#fef2f2;}
+
+/* === FILL-IN INPUTS === */
+.ex-s{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px;font-size:15px;color:#1a1a1a;margin-bottom:1rem;line-height:1.6;}
+.ex-n{color:#555;min-width:22px;font-size:14px;font-weight:700;}
+.blk{border:none;border-bottom:2.5px solid #999;background:#f8f8f8;font-size:15px;width:130px;color:#1a1a1a;padding:3px 6px;outline:none;font-family:inherit;border-radius:4px 4px 0 0;}
+.blk:focus{border-bottom-color:#0a5c46;background:#f0fdf8;}
+.blk.ok{border-bottom-color:#15803d;color:#14532d;background:#f0fdf4;}
+.blk.ng{border-bottom-color:#dc2626;color:#991b1b;background:#fef2f2;}
+
+/* === BUTTONS === */
+.chk-btn{padding:10px 22px;background:#0a5c46;color:#fff;border:2px solid #0a5c46;border-radius:8px;cursor:pointer;font-size:15px;font-weight:700;margin-top:0.75rem;min-height:44px;font-family:inherit;}
+.chk-btn:hover{background:#085040;border-color:#085040;}
+.rst-btn{padding:10px 18px;background:#fff;color:#1a1a1a;border:2px solid #bbb;border-radius:8px;cursor:pointer;font-size:15px;font-weight:600;margin-left:8px;margin-top:0.75rem;min-height:44px;font-family:inherit;}
+.rst-btn:hover{border-color:#0a5c46;color:#0a5c46;}
+.res-msg{margin-top:10px;font-size:15px;color:#1a1a1a;font-weight:600;}
+
+/* === RESOURCES === */
+.res-lnk{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #e8e8e8;font-size:14px;color:#1a1a1a;}
+.res-lnk:last-child{border-bottom:none;}
+.res-lnk .rl{font-weight:700;color:#1a1a1a;min-width:64px;}
+.res-lnk a{color:#0a4a38;text-decoration:underline;text-underline-offset:3px;font-weight:500;}
+.res-lnk a:hover{color:#0a5c46;}
+
+/* === ACT STEPS === */
+.act-step{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #e8e8e8;}
+.act-step:last-child{border-bottom:none;}
+.snum{width:34px;height:34px;min-width:34px;border-radius:50%;background:#0a5c46;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;}
+
+/* === VERB COLS === */
+.verb-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:0.75rem;}
+.verb-col{background:#f5f5f5;border-radius:10px;padding:14px;}
+.verb-col-head{font-size:12px;font-weight:800;color:#0a3d28;text-transform:uppercase;letter-spacing:0.8px;background:#7dd6b0;padding:5px 8px;border-radius:4px;margin-bottom:10px;text-align:center;}
+.q-pill{display:inline-block;padding:4px 12px;border-radius:20px;background:#d4f0e3;color:#0a3d28;font-size:13px;font-style:italic;font-weight:700;margin:3px 4px 3px 0;}
+
+/* === SORT GAME === */
+.sort-pool{display:flex;flex-wrap:wrap;gap:6px;min-height:48px;padding:12px;background:#f5f5f5;border-radius:10px;margin-bottom:12px;}
+.sort-buckets{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;}
+.sort-bucket{border:2px dashed #bbb;border-radius:10px;padding:10px;min-height:90px;cursor:pointer;}
+.sort-bucket:hover{border-color:#0a5c46;}
+.sort-bucket-head{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:#0a3d28;background:#7dd6b0;padding:5px 8px;border-radius:4px;margin-bottom:8px;text-align:center;}
+.sort-chip{display:inline-block;padding:7px 14px;background:#fff;border:2px solid #ccc;border-radius:20px;font-size:14px;font-style:italic;cursor:pointer;margin:4px;transition:all 0.15s;min-height:36px;font-weight:500;color:#1a1a1a;}
+.sort-chip:hover{border-color:#0a5c46;background:#f0fdf8;}
+.sort-chip.sel{border-color:#0a5c46;background:#e8f8f0;color:#0a3d28;font-weight:700;}
+.sort-chip.correct{background:#d4f0e3;border-color:#1a7a3a;color:#0a3d28;cursor:default;}
+.sort-chip.wrong{background:#fef2f2;border-color:#dc2626;color:#991b1b;}
+
+/* === CONJUGATION DRILL === */
+.drill-card{text-align:center;padding:2rem 1.5rem;background:#f5f5f5;border-radius:12px;margin-bottom:1rem;}
+.drill-prompt{font-size:24px;font-weight:800;color:#0a4a38;margin-bottom:6px;}
+.drill-hint{font-size:14px;color:#444;font-weight:600;margin-bottom:1rem;}
+.drill-inp{border:2.5px solid #999;border-radius:8px;background:#fff;font-size:19px;width:210px;text-align:center;color:#1a1a1a;padding:8px 12px;outline:none;font-family:inherit;}
+.drill-inp:focus{border-color:#0a5c46;background:#f0fdf8;}
+.drill-inp.ok{border-color:#15803d;color:#14532d;background:#f0fdf4;}
+.drill-inp.ng{border-color:#dc2626;color:#991b1b;background:#fef2f2;}
+.drill-fb{font-size:15px;font-weight:700;margin-top:10px;min-height:24px;color:#1a1a1a;}
+.drill-nav{display:flex;justify-content:center;gap:8px;margin-top:1rem;flex-wrap:wrap;}
+.drill-prog{font-size:14px;color:#444;font-weight:600;text-align:center;margin-top:8px;}
+
+/* === GENDER QUIZ === */
+.gq-card{text-align:center;padding:2rem;background:#f5f5f5;border-radius:12px;margin-bottom:1rem;}
+.gq-noun{font-size:32px;font-style:italic;font-weight:800;color:#1a1a1a;margin-bottom:1.25rem;}
+.gq-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+.gq-btn{padding:13px 32px;font-size:15px;font-weight:700;border:2.5px solid;border-radius:8px;cursor:pointer;transition:all 0.15s;min-height:48px;font-family:inherit;}
+.gq-m{background:#dbeafe;color:#1e3a6e;border-color:#60a5fa;}
+.gq-m:hover{background:#bfdbfe;}
+.gq-f{background:#fef3c7;color:#78350f;border-color:#f59e0b;}
+.gq-f:hover{background:#fde68a;}
+.gq-fb{font-size:15px;font-weight:700;margin-top:12px;min-height:24px;color:#1a1a1a;}
+.gq-prog{font-size:14px;color:#444;font-weight:600;margin-top:8px;}
+
+/* === CHECKLIST === */
+.chk-item{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #e8e8e8;font-size:15px;color:#1a1a1a;line-height:1.5;}
+.chk-item:last-child{border-bottom:none;}
+.chk-item input[type=checkbox]{width:20px;height:20px;accent-color:#0a5c46;cursor:pointer;flex-shrink:0;}
+
+/* === SCRIPT AREA === */
+.vl-script{width:100%;border:2px solid #bbb;border-radius:8px;padding:12px;font-size:15px;font-family:inherit;background:#fff;color:#1a1a1a;outline:none;resize:vertical;line-height:1.7;}
+.vl-script:focus{border-color:#0a5c46;}
+
+/* === SND GRID === */
+.snd-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.snd-card{padding:12px 14px;background:#f5f5f5;border-radius:8px;}
+.snd-card p.sp{font-style:italic;font-weight:700;font-size:15px;color:#0a4a38;}
+.snd-card p.en{font-size:13px;color:#444;margin-top:4px;}
+
+/* === PAGE NAV === */
+.page-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:1.25rem;border-top:2px solid #e0e0e0;gap:8px;}
+.pnav-btn{display:inline-flex;align-items:center;gap:6px;padding:11px 22px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:all 0.15s;min-height:48px;border:2px solid;}
+.pnav-prev{background:#fff;color:#1a1a1a;border-color:#bbb;}
+.pnav-prev:hover{border-color:#0a5c46;color:#0a5c46;}
+.pnav-next{background:#0a5c46;color:#fff;border-color:#0a5c46;}
+.pnav-next:hover{background:#085040;border-color:#085040;}
+.pnav-ghost{visibility:hidden;pointer-events:none;}
+
+/* === CULT CARD TEXT === */
+.cult-card .card-title{color:#0a4a38;}
+.cult-card p{font-size:15px;color:#0a3d28;line-height:1.7;}
+</style>
+
+
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="app">
+
+  <div class="chap-head">
+    <div class="chap-badge">Semana 2 &middot; Week 2</div>
+    <h1>VERBOS &middot; ART&Iacute;CULOS</h1>
+    <p>Regular present-tense verbs, articles &amp; nouns, and your first video profile.</p>
+  </div>
+
+  <div class="prog-bar"><div class="prog-fill" id="pf" style="width:0%"></div></div>
+
+  <nav class="nav" aria-label="Course sections">
+    <button class="tab active" onclick="switchTab('ov',this)">Inicio</button>
+    <button class="tab" onclick="switchTab('vo',this)">Vocabulario</button>
+    <button class="tab" onclick="switchTab('vb',this)">Verbos</button>
+    <button class="tab" onclick="switchTab('ar',this)">Art&iacute;culos</button>
+    <button class="tab" onclick="switchTab('ej',this)">Ejercicios</button>
+    <button class="tab" onclick="switchTab('vl',this)">Video Log</button>
+  </nav>
+
+  <div id="main-content"></div>
+
+  <!-- ══ INICIO ══ -->
+  <div class="sec" id="sec-ov">
+    <h2 class="sec-title">Learning Objectives / Objetivos de la semana</h2>
+    <div class="card">
+      <ul class="obj-list">
+        <li>Conjugate regular <em>-ar</em>, <em>-er</em>, and <em>-ir</em> verbs in the present tense for all persons</li>
+        <li>Recognize and produce key learning-activity vocabulary (<em>hablar, leer, escribir&hellip;</em>)</li>
+        <li>Assign correct definite and indefinite articles to Spanish nouns by gender and number</li>
+        <li>Identify noun gender using word endings and context clues</li>
+        <li>Describe daily study habits using at least five different verbs</li>
+        <li>Record a 60&ndash;90 second Video Log introduction &mdash; due Sunday night</li>
+      </ul>
+    </div>
+
+    <h2 class="sec-title" style="margin-top:1.5rem;">Semana 2 &mdash; Week 2 Schedule</h2>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table class="sched">
+        <thead><tr><th>Day</th><th>Type</th><th>Focus</th><th>Homework</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Weekend/Monday</strong></td><td><span class="bdg b-sg">Self-Guided</span></td><td>Vocab 2 + Grammar 2</td><td><em>Ejercicio 6; memorize -ar endings</em></td></tr>
+          <tr><td><strong>Tuesday</strong></td><td><span class="bdg b-in">In-Class</span></td><td>Regular Verbs in Action</td><td><em>Ejercicio 8; study -er/-ir endings</em></td></tr>
+          <tr><td><strong>Wednesday</strong></td><td><span class="bdg b-pr">Practice</span></td><td>Articles &amp; Nouns</td><td><em>Find 10 nouns; write with definite + indefinite article</em></td></tr>
+          <tr><td><strong>Thursday</strong></td><td><span class="bdg b-in">In-Class</span></td><td>Video Log Workshop + Quiz</td><td><em>Video Log 1 due Sunday; Semana 2 Quiz; SpanishDict HW</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card cult-card" style="margin-top:1rem;">
+      <div class="card-title">Nota Cultural</div>
+      <p>Spanish is the official language of 20 countries and the second most spoken language in the United States. In the Pacific Northwest, Spanish is visible daily &mdash; restaurant menus, road signs, community businesses &mdash; making the Linguistic Landscape project especially relevant to life in Olympia.</p>
+    </div>
+
+    <div style="text-align: center;">
+  <img src="flyer.png" onerror="this.style.display='none'" alt="Spanish Conversation Circle Flyer" />
+</div>
+
+    <div class="page-nav">
+      <button class="pnav-btn pnav-prev pnav-ghost" disabled>&#8592; &nbsp;</button>
+      <button class="pnav-btn pnav-next" onclick="navTo('vo')">Vocabulario &#8594;</button>
+    </div>
+  </div>
+
+  <!-- ══ VOCABULARIO ══ -->
+  <div class="sec" id="sec-vo">
+    <h2 class="sec-title">Vocabulario 2 &mdash; Actividades para aprender espa&ntilde;ol</h2>
+    <p class="sec-sub">Click each card to reveal the English translation.</p>
+    <div class="fc-grid" id="fc-grid"></div>
+
+    <h2 class="sec-title" style="margin-top:1.75rem;">Ejercicio &mdash; Emparejamiento / Matching</h2>
+    <p class="sec-sub">Click a Spanish verb, then click its English meaning.</p>
+    <div class="card">
+      <div id="match-cont"></div>
+      <div style="margin-top:0.75rem;">
+        <button class="rst-btn" style="margin-left:0;" onclick="resetMatch()">Reset</button>
+      </div>
+      <div class="res-msg" id="match-score" aria-live="polite"></div>
+    </div>
+
+    <h2 class="sec-title" style="margin-top:1.5rem;">Recursos en l&iacute;nea / Online Resources</h2>
+    <div class="card">
+      <div class="res-lnk"><span class="rl">Video</span><a href="https://www.youtube.com/watch?v=TF71Ca3def8" target="_blank">Regular -AR Verbs Explained</a></div>
+      <div class="res-lnk"><span class="rl">Practice</span><a href="https://conjuguemos.com/verb/multiplechoice/961150" target="_blank">AR/ER/IR Conjugation Practice</a></div>
+      <div class="res-lnk"><span class="rl">Video</span><a href="https://www.youtube.com/watch?v=oCT68wkVCNM" target="_blank">Regular -ER and -IR Verbs</a></div>
+      <div class="res-lnk"><span class="rl">Practice</span><a href="https://conjuguemos.com/verb/multiplechoice/992827" target="_blank">-ER / -IR Verb Drills</a></div>
+      <div class="res-lnk"><span class="rl">Quizlet</span><a href="https://quizlet.com/1152174688/ar-er-ir-regular-verbs-flash-cards/?i=63ltmr&x=1jqt" target="_blank">Actividad de Quizlet</a></div>
+    </div>
+
+    <div class="page-nav">
+      <button class="pnav-btn pnav-prev" onclick="navTo('ov')">&#8592; Inicio</button>
+      <button class="pnav-btn pnav-next" onclick="navTo('vb')">Verbos &#8594;</button>
+    </div>
+  </div>
+
+  <!-- ══ VERBOS ══ -->
+  <div class="sec" id="sec-vb">
+    <h2 class="sec-title">Gram&aacute;tica 2 &mdash; Verbos regulares en presente</h2>
+    <p class="sec-sub">Remove the infinitive ending (-ar / -er / -ir), then add the personal ending.</p>
+
+    <div class="card">
+      <div class="card-title">Conjugation Patterns &mdash; Los tres modelos</div>
+      <div class="verb-cols">
+        <div class="verb-col">
+          <div class="verb-col-head">-AR &middot; hablar</div>
+          <div style="font-size:14px;line-height:2.1;color:#1a1a1a;">
+            <span class="pn">yo</span> <span class="fm">hablo</span><br>
+            <span class="pn">t&uacute;</span> <span class="fm">hablas</span><br>
+            <span class="pn">&eacute;l/ella</span> <span class="fm">habla</span><br>
+            <span class="pn">nosotros</span> <span class="fm">hablamos</span><br>
+            <span class="pn">ellos/Uds.</span> <span class="fm">hablan</span>
+          </div>
+        </div>
+        <div class="verb-col">
+          <div class="verb-col-head">-ER &middot; comer</div>
+          <div style="font-size:14px;line-height:2.1;color:#1a1a1a;">
+            <span class="pn">yo</span> <span class="fm">como</span><br>
+            <span class="pn">t&uacute;</span> <span class="fm">comes</span><br>
+            <span class="pn">&eacute;l/ella</span> <span class="fm">come</span><br>
+            <span class="pn">nosotros</span> <span class="fm">comemos</span><br>
+            <span class="pn">ellos/Uds.</span> <span class="fm">comen</span>
+          </div>
+        </div>
+        <div class="verb-col">
+          <div class="verb-col-head">-IR &middot; vivir</div>
+          <div style="font-size:14px;line-height:2.1;color:#1a1a1a;">
+            <span class="pn">yo</span> <span class="fm">vivo</span><br>
+            <span class="pn">t&uacute;</span> <span class="fm">vives</span><br>
+            <span class="pn">&eacute;l/ella</span> <span class="fm">vive</span><br>
+            <span class="pn">nosotros</span> <span class="fm">vivimos</span><br>
+            <span class="pn">ellos/Uds.</span> <span class="fm">viven</span>
+          </div>
+        </div>
+      </div>
+      <div class="ojo" style="margin-top:1rem;">
+        <strong>&iexcl;OJO! The key difference</strong>
+        <p>-ER and -IR share most endings. The only difference: <em>nosotros</em> uses <strong>-emos</strong> for -ER but <strong>-imos</strong> for -IR. All three types share the same <em>yo</em> ending: <strong>-o</strong>.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">More verbs / M&aacute;s verbos</div>
+      <div style="font-size:14px;line-height:2;color:#1a1a1a;">
+        <strong style="color:#0a3d28;">-AR:</strong> <span class="q-pill">caminar</span><span class="q-pill">practicar</span><span class="q-pill">escuchar</span><span class="q-pill">estudiar</span><span class="q-pill">memorizar</span><span class="q-pill">preguntar</span><br>
+        <strong style="color:#0a3d28;">-ER:</strong> <span class="q-pill">beber</span><span class="q-pill">leer</span><span class="q-pill">comprender</span><span class="q-pill">responder</span><br>
+        <strong style="color:#0a3d28;">-IR:</strong> <span class="q-pill">escribir</span><span class="q-pill">recibir</span><span class="q-pill">abrir</span><span class="q-pill">repetir</span>
+      </div>
+    </div>
+
+    <h2 class="sec-title" style="margin-top:1.5rem;">Ejercicio &mdash; Clasificar verbos / Sort the Verbs</h2>
+    <p class="sec-sub">Click a verb to select it (it will highlight), then click the correct -AR / -ER / -IR bucket below.</p>
+    <div class="card">
+      <p style="font-size:14px;color:#444;margin-bottom:8px;">Verb pool &mdash; click to select:</p>
+      <div class="sort-pool" id="sort-pool"></div>
+      <div class="sort-buckets">
+        <div class="sort-bucket" id="bucket-ar" onclick="dropIntoBucket('ar')">
+          <div class="sort-bucket-head">-AR</div>
+          <div id="bucket-ar-items"></div>
+        </div>
+        <div class="sort-bucket" id="bucket-er" onclick="dropIntoBucket('er')">
+          <div class="sort-bucket-head">-ER</div>
+          <div id="bucket-er-items"></div>
+        </div>
+        <div class="sort-bucket" id="bucket-ir" onclick="dropIntoBucket('ir')">
+          <div class="sort-bucket-head">-IR</div>
+          <div id="bucket-ir-items"></div>
+        </div>
+      </div>
+      <button class="chk-btn" onclick="checkSort()">Check Sort</button>
+      <button class="rst-btn" onclick="resetSort()">Reset</button>
+      <div class="res-msg" id="sc-sort" aria-live="polite"></div>
+    </div>
+
+    <h2 class="sec-title" style="margin-top:1.5rem;">Ejercicio 7 &mdash; Tablas de conjugaci&oacute;n</h2>
+    <p class="sec-sub">Complete each table from memory.</p>
+
+    <div class="card">
+      <div class="card-title">A. ESTUDIAR (-ar)</div>
+      <table class="ctab">
+        <thead><tr><th colspan="2">estudiar</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pn">yo</span> <input class="blk" id="v1" data-answer="estudio" placeholder="___"></td><td><span class="pn">nosotros/as</span> <input class="blk" id="v2" data-answer="estudiamos" placeholder="___"></td></tr>
+          <tr><td><span class="pn">t&uacute;</span> <input class="blk" id="v3" data-answer="estudias" placeholder="___"></td><td><span class="pn">ellos/Uds.</span> <input class="blk" id="v4" data-answer="estudian" placeholder="___"></td></tr>
+          <tr><td><span class="pn">&eacute;l/ella/Ud.</span> <input class="blk" id="v5" data-answer="estudia" placeholder="___"></td><td></td></tr>
+        </tbody>
+      </table>
+      <button class="chk-btn" onclick="checkBlanks('v1,v2,v3,v4,v5','sc7a')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('v1,v2,v3,v4,v5','sc7a')">Reset</button>
+      <div class="res-msg" id="sc7a" aria-live="polite"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">B. LEER (-er)</div>
+      <table class="ctab">
+        <thead><tr><th colspan="2">leer</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pn">yo</span> <input class="blk" id="r1" data-answer="leo" placeholder="___"></td><td><span class="pn">nosotros/as</span> <input class="blk" id="r2" data-answer="leemos" placeholder="___"></td></tr>
+          <tr><td><span class="pn">t&uacute;</span> <input class="blk" id="r3" data-answer="lees" placeholder="___"></td><td><span class="pn">ellos/Uds.</span> <input class="blk" id="r4" data-answer="leen" placeholder="___"></td></tr>
+          <tr><td><span class="pn">&eacute;l/ella/Ud.</span> <input class="blk" id="r5" data-answer="lee" placeholder="___"></td><td></td></tr>
+        </tbody>
+      </table>
+      <button class="chk-btn" onclick="checkBlanks('r1,r2,r3,r4,r5','sc7b')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('r1,r2,r3,r4,r5','sc7b')">Reset</button>
+      <div class="res-msg" id="sc7b" aria-live="polite"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">C. ESCRIBIR (-ir)</div>
+      <table class="ctab">
+        <thead><tr><th colspan="2">escribir</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pn">yo</span> <input class="blk" id="w1" data-answer="escribo" placeholder="___"></td><td><span class="pn">nosotros/as</span> <input class="blk" id="w2" data-answer="escribimos" placeholder="___"></td></tr>
+          <tr><td><span class="pn">t&uacute;</span> <input class="blk" id="w3" data-answer="escribes" placeholder="___"></td><td><span class="pn">ellos/Uds.</span> <input class="blk" id="w4" data-answer="escriben" placeholder="___"></td></tr>
+          <tr><td><span class="pn">&eacute;l/ella/Ud.</span> <input class="blk" id="w5" data-answer="escribe" placeholder="___"></td><td></td></tr>
+        </tbody>
+      </table>
+      <button class="chk-btn" onclick="checkBlanks('w1,w2,w3,w4,w5','sc7c')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('w1,w2,w3,w4,w5','sc7c')">Reset</button>
+      <div class="res-msg" id="sc7c" aria-live="polite"></div>
+    </div>
+
+    <h2 class="sec-title" style="margin-top:1.5rem;">Conjugation Drill &mdash; Pr&aacute;ctica r&aacute;pida</h2>
+    <p class="sec-sub">Type the correct conjugated form, then press Check or Enter.</p>
+    <div class="card">
+      <div class="drill-card">
+        <div class="drill-prompt" id="drill-prompt">&mdash;</div>
+        <div class="drill-hint" id="drill-hint"></div>
+        <input class="drill-inp" id="drill-inp" aria-label="Your conjugation answer" placeholder="escribe aqu&iacute;" autocomplete="off" onkeydown="if(event.key==='Enter')checkDrill()">
+        <div class="drill-fb" id="drill-fb" aria-live="polite" aria-atomic="true"></div>
+      </div>
+      <div class="drill-nav">
+        <button class="chk-btn" style="margin-top:0;" onclick="checkDrill()">Check</button>
+        <button class="rst-btn" style="margin-top:0;" onclick="nextDrill()">Next &#8594;</button>
+        <button class="rst-btn" style="margin-top:0;" onclick="restartDrill()">Restart</button>
+      </div>
+      <div class="drill-prog" id="drill-prog"></div>
+    </div>
+
+    <div class="page-nav">
+      <button class="pnav-btn pnav-prev" onclick="navTo('vo')">&#8592; Vocabulario</button>
+      <button class="pnav-btn pnav-next" onclick="navTo('ar')">Art&iacute;culos &#8594;</button>
+    </div>
+  </div>
+
+  <!-- ══ ARTICULOS ══ -->
+  <div class="sec" id="sec-ar">
+    <h2 class="sec-title">Gram&aacute;tica 3 &mdash; Art&iacute;culos y sustantivos</h2>
+    <p class="sec-sub">All Spanish nouns have grammatical gender. Articles must agree in gender and number.</p>
+
+    <div class="card">
+      <div class="card-title">Definite &amp; Indefinite Articles</div>
+      <table class="ctab">
+        <thead><tr><th></th><th>Definite (the)</th><th>Indefinite (a / some)</th></tr></thead>
+        <tbody>
+          <tr><td style="color:#444;font-size:14px;">Singular M</td><td><span class="fm">el</span> libro</td><td><span class="fm">un</span> libro</td></tr>
+          <tr><td style="color:#444;font-size:14px;">Singular F</td><td><span class="fm">la</span> clase</td><td><span class="fm">una</span> clase</td></tr>
+          <tr><td style="color:#444;font-size:14px;">Plural M</td><td><span class="fm">los</span> libros</td><td><span class="fm">unos</span> libros</td></tr>
+          <tr><td style="color:#444;font-size:14px;">Plural F</td><td><span class="fm">las</span> clases</td><td><span class="fm">unas</span> clases</td></tr>
+        </tbody>
+      </table>
+      <div class="ex-box" style="margin-top:0.75rem;">
+        <p>Most nouns ending in <strong>-o</strong> &rarr; masculine &nbsp;|&nbsp; most ending in <strong>-a</strong> &rarr; feminine</p>
+        <p>Always memorize nouns WITH their article: <em>el libro</em>, <em>la clase</em>, <em>el examen</em></p>
+      </div>
+      <div class="ojo">
+        <strong>&iexcl;OJO!</strong>
+        <p>Nouns ending in <em>-e</em> or a consonant can be either gender: <em>el/la estudiante</em>, <em>el examen</em> (M), <em>la clase</em> (F). When in doubt, look it up and record it with its article.</p>
+      </div>
+    </div>
+
+    <h2 class="sec-title" style="margin-top:1.5rem;">Ejercicio &mdash; G&eacute;nero / Noun Gender Quiz</h2>
+    <p class="sec-sub">Is the noun masculine or feminine? Click your answer &mdash; it advances automatically.</p>
+    <div class="card">
+      <div class="gq-card">
+        <div class="gq-noun" id="gq-noun">&mdash;</div>
+        <div class="gq-btns">
+          <button class="gq-btn gq-m" onclick="answerGender('m')">Masculino (M)</button>
+          <button class="gq-btn gq-f" onclick="answerGender('f')">Femenino (F)</button>
+        </div>
+        <div class="gq-fb" id="gq-fb" aria-live="polite" aria-atomic="true"></div>
+      </div>
+      <div class="gq-prog" id="gq-prog"></div>
+      <div style="margin-top:0.75rem;">
+        <button class="rst-btn" style="margin-left:0;" onclick="resetGender()">Restart Quiz</button>
+      </div>
+      <div class="res-msg" id="gq-score" aria-live="polite"></div>
+    </div>
+
+    <h2 class="sec-title" style="margin-top:1.5rem;">Ejercicio 9 &mdash; Art&iacute;culos definidos e indefinidos</h2>
+    <p class="sec-sub">Write the correct definite AND indefinite article for each noun.</p>
+    <div class="card">
+      <div id="art-cont"></div>
+      <button class="chk-btn" onclick="checkArticles()">Check Answers</button>
+      <button class="rst-btn" onclick="resetArticles()">Reset</button>
+      <div class="res-msg" id="sc9" aria-live="polite"></div>
+    </div>
+
+    <div class="card cult-card">
+      <div class="card-title">Estrategia</div>
+      <p>Always record new nouns with their article &mdash; not <em>libro</em> but <em>el libro</em>. This trains your brain to associate gender automatically, a habit that pays off every time you speak or write.</p>
+    </div>
+
+    <h2 class="sec-title" style="margin-top:1.5rem;">Recursos en l&iacute;nea</h2>
+    <div class="card">
+      <div class="res-lnk"><span class="rl">Video</span><a href="https://www.youtube.com/watch?v=YeTIwDcKwZ4" target="_blank">Spanish Nouns &amp; Articles</a></div>
+      <div class="res-lnk"><span class="rl">Guide</span><a href="https://jmmenjivar21.github.io/Gender-and-number-of-nouns-practice/" target="_blank">Noun Gender and Number Practice</a></div>
+    </div>
+
+    <div class="page-nav">
+      <button class="pnav-btn pnav-prev" onclick="navTo('vb')">&#8592; Verbos</button>
+      <button class="pnav-btn pnav-next" onclick="navTo('ej')">Ejercicios &#8594;</button>
+    </div>
+  </div>
+
+  <!-- ══ EJERCICIOS ══ -->
+  <div class="sec" id="sec-ej">
+    <h2 class="sec-title">Ejercicios &mdash; Practice Exercises</h2>
+
+    <div class="card">
+      <div class="card-title">Ejercicio 6 &mdash; Asociaciones</div>
+      <p style="font-size:14px;color:#444;margin-bottom:0.5rem;">Write the most logical learning-activity verb for each situation.</p>
+      <div class="ex-box">
+        <p><strong>Word Bank:</strong> hablar &middot; escuchar &middot; leer &middot; escribir &middot; practicar &middot; memorizar &middot; preguntar &middot; estudiar &middot; aprender &middot; repetir</p>
+      </div>
+      <div class="ex-s"><span class="ex-n">1.</span>You have a vocab exam tomorrow and need to <input class="blk" id="a1" data-answer="memorizar" placeholder="___" style="width:120px;"> all 40 words.</div>
+      <div class="ex-s"><span class="ex-n">2.</span>You don't understand a grammar point, so you <input class="blk" id="a2" data-answer="preguntar" placeholder="___" style="width:120px;"> the professor.</div>
+      <div class="ex-s"><span class="ex-n">3.</span>Your professor is explaining the homework; you need to <input class="blk" id="a3" data-answer="escuchar" placeholder="___" style="width:120px;"> carefully.</div>
+      <div class="ex-s"><span class="ex-n">4.</span>The task says to produce a paragraph; you <input class="blk" id="a4" data-answer="escribir" placeholder="___" style="width:120px;"> in Spanish.</div>
+      <div class="ex-s"><span class="ex-n">5.</span>You want to improve your conversation; you <input class="blk" id="a5" data-answer="hablar" placeholder="___" style="width:120px;"> with native speakers.</div>
+      <div class="ex-s"><span class="ex-n">6.</span>The instructions are in Spanish; you <input class="blk" id="a6" data-answer="leer" placeholder="___" style="width:120px;"> them first.</div>
+      <div class="ex-s"><span class="ex-n">7.</span>Your professor said something unclear; you ask them to <input class="blk" id="a7" data-answer="repetir" placeholder="___" style="width:120px;"> it.</div>
+      <div class="ex-s"><span class="ex-n">8.</span>You hear a new word and want to understand it; you <input class="blk" id="a8" data-answer="aprender" placeholder="___" style="width:120px;"> it.</div>
+      <button class="chk-btn" onclick="checkBlanks('a1,a2,a3,a4,a5,a6,a7,a8','sc6')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('a1,a2,a3,a4,a5,a6,a7,a8','sc6')">Reset</button>
+      <div class="res-msg" id="sc6" aria-live="polite"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Ejercicio 8 &mdash; Regular Verbs in Context</div>
+      <p style="font-size:14px;color:#444;margin-bottom:1rem;">Fill in the correct present-tense form of the verb in parentheses.</p>
+      <div class="ex-s"><span class="ex-n">1.</span>Yo <input class="blk" id="b1" data-answer="estudio" placeholder="___"> espa&ntilde;ol todos los d&iacute;as. <span style="color:#666;font-size:13px;">(estudiar)</span></div>
+      <div class="ex-s"><span class="ex-n">2.</span>Mar&iacute;a <input class="blk" id="b2" data-answer="lee" placeholder="___"> muchos libros de literatura. <span style="color:#666;font-size:13px;">(leer)</span></div>
+      <div class="ex-s"><span class="ex-n">3.</span>Nosotros <input class="blk" id="b3" data-answer="escribimos" placeholder="___"> correos electr&oacute;nicos en clase. <span style="color:#666;font-size:13px;">(escribir)</span></div>
+      <div class="ex-s"><span class="ex-n">4.</span>&iquest;T&uacute; <input class="blk" id="b4" data-answer="escuchas" placeholder="___"> m&uacute;sica mientras estudias? <span style="color:#666;font-size:13px;">(escuchar)</span></div>
+      <div class="ex-s"><span class="ex-n">5.</span>Los estudiantes <input class="blk" id="b5" data-answer="practican" placeholder="___"> el vocabulario nuevo. <span style="color:#666;font-size:13px;">(practicar)</span></div>
+      <div class="ex-s"><span class="ex-n">6.</span>Ella <input class="blk" id="b6" data-answer="bebe" placeholder="___"> agua durante el examen. <span style="color:#666;font-size:13px;">(beber)</span></div>
+      <div class="ex-s"><span class="ex-n">7.</span>&iquest;Ustedes <input class="blk" id="b7" data-answer="estudian" placeholder="___"> despu&eacute;s de clase? <span style="color:#666;font-size:13px;">(estudiar)</span></div>
+      <div class="ex-s"><span class="ex-n">8.</span>Yo <input class="blk" id="b8" data-answer="escribo" placeholder="___"> un mensaje a mi profesora. <span style="color:#666;font-size:13px;">(escribir)</span></div>
+      <div class="ex-s"><span class="ex-n">9.</span>Nosotros <input class="blk" id="b9" data-answer="comemos" placeholder="___"> en la cafeter&iacute;a a las doce. <span style="color:#666;font-size:13px;">(comer)</span></div>
+      <div class="ex-s"><span class="ex-n">10.</span>&iquest;T&uacute; <input class="blk" id="b10" data-answer="hablas" placeholder="___"> ingl&eacute;s y espa&ntilde;ol? <span style="color:#666;font-size:13px;">(hablar)</span></div>
+      <button class="chk-btn" onclick="checkBlanks('b1,b2,b3,b4,b5,b6,b7,b8,b9,b10','sc8')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('b1,b2,b3,b4,b5,b6,b7,b8,b9,b10','sc8')">Reset</button>
+      <div class="res-msg" id="sc8" aria-live="polite"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Actividad &mdash; Di&aacute;logo de h&aacute;bitos</div>
+      <p style="font-size:14px;color:#444;margin-bottom:0.75rem;">Complete the study habits dialogue with the correct verb form.</p>
+      <div class="ex-box"><p><em>Model: "Estudio por las noches. Escucho m&uacute;sica mientras estudio. &iquest;Y t&uacute;?"</em></p></div>
+      <div class="ex-s"><span class="ex-n">A:</span>&iquest;A qu&eacute; hora <input class="blk" id="d1" data-answer="estudias" placeholder="___" style="width:110px;"> (estudiar, t&uacute;) normalmente?</div>
+      <div class="ex-s"><span class="ex-n">B:</span>Yo <input class="blk" id="d2" data-answer="estudio" placeholder="___"> por las noches. &iquest;Y t&uacute;?</div>
+      <div class="ex-s"><span class="ex-n">A:</span>Yo <input class="blk" id="d3" data-answer="practico" placeholder="___"> (practicar) en la ma&ntilde;ana y <input class="blk" id="d4" data-answer="leo" placeholder="___"> (leer) por la tarde.</div>
+      <div class="ex-s"><span class="ex-n">B:</span>&iquest;T&uacute; <input class="blk" id="d5" data-answer="escuchas" placeholder="___"> (escuchar) m&uacute;sica mientras estudias?</div>
+      <div class="ex-s"><span class="ex-n">A:</span>S&iacute;, y tambi&eacute;n <input class="blk" id="d6" data-answer="escribo" placeholder="___"> (escribir) notas a mano.</div>
+      <button class="chk-btn" onclick="checkBlanks('d1,d2,d3,d4,d5,d6','scd')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('d1,d2,d3,d4,d5,d6','scd')">Reset</button>
+      <div class="res-msg" id="scd" aria-live="polite"></div>
+    </div>
+
+    <div class="page-nav">
+      <button class="pnav-btn pnav-prev" onclick="navTo('ar')">&#8592; Art&iacute;culos</button>
+      <button class="pnav-btn pnav-next" onclick="navTo('vl')">Video Log &#8594;</button>
+    </div>
+  </div>
+
+  <!-- ══ VIDEO LOG ══ -->
+  <div class="sec" id="sec-vl">
+    <h2 class="sec-title">Video Log 1 &mdash; Mi perfil en l&iacute;nea</h2>
+    <p class="sec-sub">Record a 30&ndash;60 second introduction video in Spanish. Due Sunday night.</p>
+
+    <div class="card">
+      <div class="card-title">Recording Guide / Gu&iacute;a de grabaci&oacute;n</div>
+      <div class="act-step">
+        <div class="snum">1&ndash;2</div>
+        <div><p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">Name + Origin</p><p style="font-size:14px;color:#444;font-style:italic;">"Me llamo&hellip; / Soy de&hellip;"</p></div>
+      </div>
+      <div class="act-step">
+        <div class="snum">3</div>
+        <div><p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">What you study or do</p><p style="font-size:14px;color:#444;font-style:italic;">"Estudio [materia] en SPSCC." / "Trabajo en [lugar]."</p></div>
+      </div>
+      <div class="act-step">
+        <div class="snum">4&ndash;5</div>
+        <div><p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">Two or three activities you like</p><p style="font-size:14px;color:#444;font-style:italic;">"Me gusta(n)&hellip;"</p></div>
+      </div>
+      <div class="act-step">
+        <div class="snum">6</div>
+        <div><p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">Why you are learning Spanish</p><p style="font-size:14px;color:#444;font-style:italic;">"Estudio espa&ntilde;ol porque&hellip;"</p></div>
+      </div>
+      <div class="act-step">
+        <div class="snum">7</div>
+        <div><p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">One more personal detail of your choice</p><p style="font-size:14px;color:#444;">Anything true about yourself &mdash; in Spanish!</p></div>
+      </div>
+      <div class="act-step">
+        <div class="snum">8</div>
+        <div><p style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:3px;">Ask questions</p><p style="font-size:14px;color:#444;">Ejemplo: ¿Cómo te llamas? ¿De dónde eres? ¿Qué te gusta hacer?</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Script Writer / Escribe tu gui&oacute;n aqu&iacute;</div>
+      <textarea class="vl-script" id="vl-text" rows="10" aria-label="Video script draft" placeholder="Me llamo... Soy de... Estudio... Me gusta(n)... Estudio espa&ntilde;ol porque..."></textarea>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+        <span style="font-size:13px;color:#444;font-weight:600;" id="word-count">0 words</span>
+        <button class="rst-btn" style="margin-top:0;" onclick="document.getElementById('vl-text').value='';updateWC();">Clear</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Checklist &mdash; Before you record</div>
+      <div class="chk-item"><input type="checkbox" id="c1"><label for="c1">30&ndash;60 seconds long</label></div>
+      <div class="chk-item"><input type="checkbox" id="c2"><label for="c2">At least 3 different verbs used</label></div>
+      <div class="chk-item"><input type="checkbox" id="c3"><label for="c3">Correct articles on all nouns (el / la / un / una)</label></div>
+      <div class="chk-item"><input type="checkbox" id="c4"><label for="c4"><em>ser</em> used at least once (soy / es / somos&hellip;)</label></div>
+      <div class="chk-item"><input type="checkbox" id="c5"><label for="c5"><em>llamarse</em> used at least once (me llamo&hellip;)</label></div>
+      <div class="chk-item"><input type="checkbox" id="c6"><label for="c6">Speaking directly to the camera</label></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Questions to practice / Preguntas para practicar</div>
+      <div class="snd-grid" style="margin-top:0.5rem;">
+        <div class="snd-card"><p class="sp">&iquest;C&oacute;mo te llamas?</p><p class="en">What is your name?</p></div>
+        <div class="snd-card"><p class="sp">&iquest;De d&oacute;nde eres?</p><p class="en">Where are you from?</p></div>
+        <div class="snd-card"><p class="sp">&iquest;Qu&eacute; estudias o trabajas?</p><p class="en">What do you study or do?</p></div>
+        <div class="snd-card"><p class="sp">&iquest;Por qu&eacute; estudias espa&ntilde;ol?</p><p class="en">Why are you studying Spanish?</p></div>
+      </div>
+    </div>
+
+    <div class="page-nav">
+      <button class="pnav-btn pnav-prev" onclick="navTo('ej')">&#8592; Ejercicios</button>
+      <button class="pnav-btn pnav-next pnav-ghost" disabled>&#8594;</button>
+    </div>
+  </div>
+
+</div><!-- end .app -->
+
+<script>
+// ── Tab navigation ────────────────────────────────────────────
+var tabIds = ['ov','vo','vb','ar','ej','vl'];
+
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelectorAll('.sec').forEach(function(s) { s.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('sec-' + tabId).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function navTo(tabId) {
+  var buttons = document.querySelectorAll('.tab');
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].getAttribute('onclick').indexOf("'" + tabId + "'") !== -1) {
+      switchTab(tabId, buttons[i]);
+      return;
+    }
+  }
+}
+
+// ── Flashcards ────────────────────────────────────────────────
+var vocabData = [
+  {es:'hablar', en:'to speak'}, {es:'escuchar', en:'to listen'},
+  {es:'leer', en:'to read'}, {es:'escribir', en:'to write'},
+  {es:'practicar', en:'to practice'}, {es:'memorizar', en:'to memorize'},
+  {es:'preguntar', en:'to ask (a question)'}, {es:'responder / contestar', en:'to answer'},
+  {es:'repetir', en:'to repeat'}, {es:'estudiar', en:'to study'},
+  {es:'aprender', en:'to learn'}, {es:'entender', en:'to understand'}
+];
+var grid = document.getElementById('fc-grid');
+vocabData.forEach(function(v) {
+  var d = document.createElement('div');
+  d.className = 'fc';
+  d.setAttribute('tabindex', '0');
+  d.setAttribute('role', 'button');
+  d.setAttribute('aria-label', v.es + ' — click to reveal translation');
+  d.innerHTML = '<div class="fc-fr">' + v.es + '</div><div class="fc-bk">' + v.en + '</div><div class="fc-ht">Click to reveal</div>';
+  d.onclick = function() { this.classList.toggle('flipped'); };
+  d.onkeydown = function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.classList.toggle('flipped'); } };
+  grid.appendChild(d);
+});
+
+// ── Matching game ─────────────────────────────────────────────
+var matchData = [
+  {es:'hablar', en:'to speak', id:'a'}, {es:'escuchar', en:'to listen', id:'b'},
+  {es:'leer', en:'to read', id:'c'}, {es:'escribir', en:'to write', id:'d'},
+  {es:'memorizar', en:'to memorize', id:'e'}, {es:'preguntar', en:'to ask a question', id:'f'},
+  {es:'repetir', en:'to repeat', id:'g'}, {es:'estudiar', en:'to study', id:'h'},
+  {es:'aprender', en:'to learn', id:'i'}, {es:'entender', en:'to understand', id:'j'}
+];
+var selEs = null, selEn = null, matchedCount = 0;
+
+function buildMatch() {
+  var c = document.getElementById('match-cont');
+  var shuffled = matchData.slice().sort(function() { return Math.random() - 0.5; });
+  var esHtml = matchData.map(function(m, i) {
+    return '<div class="mi" id="mes-' + i + '" data-id="' + m.id + '" tabindex="0" onclick="selSpanish(this)" onkeydown="if(event.key===\'Enter\')selSpanish(this)">' + (i+1) + '. <em>' + m.es + '</em></div>';
+  }).join('');
+  var enHtml = shuffled.map(function(m) {
+    return '<div class="mi" id="men-' + m.id + '" data-id="' + m.id + '" tabindex="0" onclick="selEnglish(this)" onkeydown="if(event.key===\'Enter\')selEnglish(this)">' + m.en + '</div>';
+  }).join('');
+  c.innerHTML = '<div class="match-cols"><div>' + esHtml + '</div><div>' + enHtml + '</div></div>';
+  selEs = null; selEn = null; matchedCount = 0;
+  document.getElementById('match-score').textContent = '';
+}
+
+function selSpanish(el) {
+  if (el.classList.contains('done')) return;
+  document.querySelectorAll('#match-cont .mi').forEach(function(i) { if (!i.classList.contains('done')) i.classList.remove('sel'); });
+  el.classList.add('sel'); selEs = el; tryMatch();
+}
+function selEnglish(el) {
+  if (el.classList.contains('done')) return;
+  document.querySelectorAll('#match-cont .mi').forEach(function(i) { if (!i.classList.contains('done')) i.classList.remove('sel', 'bad'); });
+  el.classList.add('sel'); selEn = el; tryMatch();
+}
+function tryMatch() {
+  if (!selEs || !selEn) return;
+  if (selEs.dataset.id === selEn.dataset.id) {
+    selEs.classList.remove('sel'); selEs.classList.add('done');
+    selEn.classList.remove('sel'); selEn.classList.add('done');
+    matchedCount++;
+    if (matchedCount === matchData.length) {
+      document.getElementById('match-score').textContent = 'Excelente! All ' + matchedCount + ' matched!';
+      markDone('ex-match');
+    }
+  } else {
+    selEn.classList.add('bad');
+    setTimeout(function() { if (selEn) selEn.classList.remove('bad', 'sel'); }, 700);
+  }
+  selEs = null; selEn = null;
+}
+function resetMatch() { selEs = null; selEn = null; buildMatch(); }
+buildMatch();
+
+// ── Fill-in checker ───────────────────────────────────────────
+function checkBlanks(ids, scoreId) {
+  var idList = ids.split(','), score = 0;
+  idList.forEach(function(id) {
+    var el = document.getElementById(id);
+    var ua = el.value.trim().toLowerCase();
+    var ca = el.dataset.answer.toLowerCase();
+    if (ua === ca) { el.classList.remove('ng'); el.classList.add('ok'); score++; }
+    else { el.classList.remove('ok'); el.classList.add('ng'); }
+  });
+  var total = idList.length, msg = score + ' / ' + total + ' correct';
+  if (score === total) { msg += ' — Perfecto!'; markDone(scoreId); }
+  document.getElementById(scoreId).textContent = msg;
+}
+function resetBlanks(ids, scoreId) {
+  ids.split(',').forEach(function(id) {
+    var el = document.getElementById(id); el.value = ''; el.classList.remove('ok', 'ng');
+  });
+  if (scoreId) document.getElementById(scoreId).textContent = '';
+}
+
+// ── Verb sort game ────────────────────────────────────────────
+var sortVerbs = [
+  {word:'caminar', cat:'ar'}, {word:'beber', cat:'er'}, {word:'escribir', cat:'ir'},
+  {word:'practicar', cat:'ar'}, {word:'leer', cat:'er'}, {word:'recibir', cat:'ir'},
+  {word:'escuchar', cat:'ar'}, {word:'comprender', cat:'er'}, {word:'abrir', cat:'ir'},
+  {word:'memorizar', cat:'ar'}, {word:'responder', cat:'er'}, {word:'vivir', cat:'ir'}
+];
+var sortSelected = null, sortPlaced = {};
+
+function buildSort() {
+  sortSelected = null; sortPlaced = {};
+  ['ar','er','ir'].forEach(function(c) { document.getElementById('bucket-' + c + '-items').innerHTML = ''; });
+  document.getElementById('sc-sort').textContent = '';
+  var shuffled = sortVerbs.slice().sort(function() { return Math.random() - 0.5; });
+  document.getElementById('sort-pool').innerHTML = shuffled.map(function(v) {
+    return '<span class="sort-chip" id="chip-' + v.word + '" tabindex="0" onclick="selectChip(this,\'' + v.word + '\')" onkeydown="if(event.key===\'Enter\')selectChip(this,\'' + v.word + '\')">' + v.word + '</span>';
+  }).join('');
+}
+function selectChip(el, word) {
+  if (el.classList.contains('correct') || el.classList.contains('wrong')) return;
+  var wasSelected = el.classList.contains('sel');
+  document.querySelectorAll('.sort-chip').forEach(function(c) { c.classList.remove('sel'); });
+  if (wasSelected) { sortSelected = null; return; }
+  el.classList.add('sel'); sortSelected = word;
+}
+function dropIntoBucket(cat) {
+  if (!sortSelected) return;
+  var chip = document.getElementById('chip-' + sortSelected);
+  if (!chip || chip.classList.contains('correct') || chip.classList.contains('wrong')) return;
+  chip.classList.remove('sel');
+  sortPlaced[sortSelected] = cat;
+  document.getElementById('bucket-' + cat + '-items').appendChild(chip);
+  sortSelected = null;
+}
+function checkSort() {
+  var score = 0;
+  sortVerbs.forEach(function(v) {
+    var chip = document.getElementById('chip-' + v.word);
+    chip.classList.remove('correct', 'wrong');
+    if (sortPlaced[v.word] === v.cat) { chip.classList.add('correct'); score++; }
+    else if (sortPlaced[v.word]) { chip.classList.add('wrong'); }
+  });
+  var placed = Object.keys(sortPlaced).length;
+  var msg = score + ' / ' + sortVerbs.length + ' correct';
+  if (placed < sortVerbs.length) msg += ' (place all verbs first)';
+  if (score === sortVerbs.length) { msg = score + ' / ' + sortVerbs.length + ' — Excelente!'; markDone('ex-sort'); }
+  document.getElementById('sc-sort').textContent = msg;
+}
+function resetSort() { buildSort(); }
+buildSort();
+
+// ── Conjugation drill ─────────────────────────────────────────
+var drillData = [
+  {prompt:'yo + hablar', hint:'-ar verb', answer:'hablo'},
+  {prompt:'tu + comer', hint:'-er verb', answer:'comes'},
+  {prompt:'ella + vivir', hint:'-ir verb', answer:'vive'},
+  {prompt:'nosotros + estudiar', hint:'-ar verb', answer:'estudiamos'},
+  {prompt:'ellos + leer', hint:'-er verb', answer:'leen'},
+  {prompt:'yo + escribir', hint:'-ir verb', answer:'escribo'},
+  {prompt:'tu + escuchar', hint:'-ar verb', answer:'escuchas'},
+  {prompt:'el + beber', hint:'-er verb', answer:'bebe'},
+  {prompt:'nosotros + vivir', hint:'-ir verb', answer:'vivimos'},
+  {prompt:'ustedes + practicar', hint:'-ar verb', answer:'practican'},
+  {prompt:'yo + comprender', hint:'-er verb', answer:'comprendo'},
+  {prompt:'ella + recibir', hint:'-ir verb', answer:'recibe'}
+];
+var drillIdx = 0, drillScore = 0, drillChecked = false;
+
+function showDrill() {
+  var d = drillData[drillIdx];
+  document.getElementById('drill-prompt').textContent = d.prompt;
+  document.getElementById('drill-hint').textContent = d.hint;
+  var inp = document.getElementById('drill-inp');
+  inp.value = ''; inp.classList.remove('ok', 'ng'); inp.focus();
+  document.getElementById('drill-fb').textContent = '';
+  document.getElementById('drill-prog').textContent = (drillIdx + 1) + ' / ' + drillData.length + ' — Score: ' + drillScore;
+  drillChecked = false;
+}
+function checkDrill() {
+  if (drillChecked) return;
+  var inp = document.getElementById('drill-inp');
+  var ua = inp.value.trim().toLowerCase(), ca = drillData[drillIdx].answer;
+  var fb = document.getElementById('drill-fb');
+  if (ua === ca) { inp.classList.add('ok'); fb.style.color = '#14532d'; fb.textContent = 'Correcto!'; drillScore++; }
+  else { inp.classList.add('ng'); fb.style.color = '#991b1b'; fb.textContent = 'Answer: ' + ca; }
+  drillChecked = true;
+  document.getElementById('drill-prog').textContent = (drillIdx + 1) + ' / ' + drillData.length + ' — Score: ' + drillScore;
+  if (drillIdx === drillData.length - 1 && drillScore === drillData.length) markDone('ex-drill');
+}
+function nextDrill() { drillIdx = (drillIdx + 1) % drillData.length; if (drillIdx === 0) drillScore = 0; showDrill(); }
+function restartDrill() { drillIdx = 0; drillScore = 0; showDrill(); }
+showDrill();
+
+// ── Gender quiz ───────────────────────────────────────────────
+var genderData = [
+  {noun:'libro', g:'m'}, {noun:'clase', g:'f'}, {noun:'diccionario', g:'m'},
+  {noun:'universidad', g:'f'}, {noun:'examen', g:'m'}, {noun:'tarea', g:'f'},
+  {noun:'companero', g:'m'}, {noun:'lengua', g:'f'}, {noun:'cuaderno', g:'m'},
+  {noun:'puerta', g:'f'}, {noun:'boligrafo', g:'m'}, {noun:'mesa', g:'f'},
+  {noun:'estudiante', g:'m/f'}, {noun:'profesora', g:'f'}, {noun:'apartamento', g:'m'}
+];
+var gqIdx = 0, gqScore = 0, gqAnswered = false;
+var shuffledGQ = genderData.slice().sort(function() { return Math.random() - 0.5; });
+
+function showGQ() {
+  document.getElementById('gq-noun').textContent = shuffledGQ[gqIdx].noun;
+  document.getElementById('gq-fb').textContent = '';
+  document.getElementById('gq-prog').textContent = (gqIdx + 1) + ' / ' + shuffledGQ.length + ' — Score: ' + gqScore;
+  document.getElementById('gq-score').textContent = '';
+  gqAnswered = false;
+}
+function answerGender(ans) {
+  if (gqAnswered) return;
+  var d = shuffledGQ[gqIdx], fb = document.getElementById('gq-fb');
+  var correct = (d.g === ans) || (d.g === 'm/f');
+  if (correct) { fb.style.color = '#14532d'; fb.textContent = d.g === 'm/f' ? 'Either el or la — both are used!' : 'Correcto!'; gqScore++; }
+  else { fb.style.color = '#991b1b'; fb.textContent = 'It is ' + (d.g === 'm' ? 'masculine — el' : 'feminine — la') + '.'; }
+  gqAnswered = true;
+  document.getElementById('gq-prog').textContent = (gqIdx + 1) + ' / ' + shuffledGQ.length + ' — Score: ' + gqScore;
+  setTimeout(function() {
+    gqIdx++;
+    if (gqIdx < shuffledGQ.length) { showGQ(); }
+    else {
+      document.getElementById('gq-noun').textContent = 'Terminado!';
+      document.getElementById('gq-fb').textContent = '';
+      var final = gqScore >= 12 ? 'Excelente!' : 'Keep practicing!';
+      document.getElementById('gq-score').textContent = 'Final score: ' + gqScore + ' / ' + shuffledGQ.length + ' — ' + final;
+      if (gqScore >= 12) markDone('ex-gender');
+    }
+  }, 900);
+}
+function resetGender() {
+  gqIdx = 0; gqScore = 0; gqAnswered = false;
+  shuffledGQ = genderData.slice().sort(function() { return Math.random() - 0.5; });
+  showGQ();
+}
+showGQ();
+
+// ── Articles exercise ─────────────────────────────────────────
+var artData = [
+  {noun:'estudiante', def:'el / la', indef:'un / una'},
+  {noun:'profesora', def:'la', indef:'una'},
+  {noun:'libros', def:'los', indef:'unos'},
+  {noun:'clase', def:'la', indef:'una'},
+  {noun:'diccionario', def:'el', indef:'un'},
+  {noun:'tareas', def:'las', indef:'unas'},
+  {noun:'companeros', def:'los', indef:'unos'},
+  {noun:'universidad', def:'la', indef:'una'},
+  {noun:'examen', def:'el', indef:'un'},
+  {noun:'lenguas', def:'las', indef:'unas'}
+];
+function buildArticles() {
+  var c = document.getElementById('art-cont');
+  c.innerHTML = artData.map(function(d, i) {
+    return '<div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:9px 0;border-bottom:1px solid #e8e8e8;font-size:15px;color:#1a1a1a;">' +
+      '<span style="color:#555;min-width:22px;font-weight:700;font-size:14px;">' + (i+1) + '.</span>' +
+      '<span style="font-style:italic;font-weight:700;min-width:115px;color:#1a1a1a;">' + d.noun + '</span>' +
+      '<span style="font-size:13px;color:#444;font-weight:600;">Definite:</span>' +
+      '<input class="blk" id="ad' + i + '" data-answer="' + d.def + '" placeholder="___" style="width:95px;">' +
+      '<span style="font-size:13px;color:#444;font-weight:600;margin-left:6px;">Indefinite:</span>' +
+      '<input class="blk" id="ai' + i + '" data-answer="' + d.indef + '" placeholder="___" style="width:95px;">' +
+      '</div>';
+  }).join('') + '<div style="height:4px;"></div>';
+}
+function checkArticles() {
+  var score = 0, total = artData.length * 2;
+  artData.forEach(function(d, i) {
+    ['ad','ai'].forEach(function(pre) {
+      var el = document.getElementById(pre + i);
+      var ua = el.value.trim().toLowerCase();
+      var answers = el.dataset.answer.toLowerCase().split(' / ');
+      if (answers.indexOf(ua) > -1) { el.classList.remove('ng'); el.classList.add('ok'); score++; }
+      else { el.classList.remove('ok'); el.classList.add('ng'); }
+    });
+  });
+  var msg = score + ' / ' + total + ' correct';
+  if (score === total) { msg += ' — Perfecto!'; markDone('sc9'); }
+  document.getElementById('sc9').textContent = msg;
+}
+function resetArticles() {
+  artData.forEach(function(d, i) {
+    ['ad','ai'].forEach(function(pre) { var el = document.getElementById(pre + i); el.value = ''; el.classList.remove('ok','ng'); });
+  });
+  document.getElementById('sc9').textContent = '';
+}
+buildArticles();
+
+// ── Word counter ──────────────────────────────────────────────
+function updateWC() {
+  var t = document.getElementById('vl-text').value.trim();
+  var w = t ? t.split(/\s+/).length : 0;
+  document.getElementById('word-count').textContent = w + ' word' + (w === 1 ? '' : 's');
+}
+document.getElementById('vl-text').addEventListener('input', updateWC);
+
+// ── Progress tracker ──────────────────────────────────────────
+var done = new Set(), totalGoals = 7;
+function markDone(id) {
+  done.add(id);
+  document.getElementById('pf').style.width = Math.round(done.size / totalGoals * 100) + '%';
+}
+</script>
+
+<script>
+(function(){
+  function norm(s){return (s||'').trim().toLowerCase();}
+  function isCorrect(el){
+    var val=norm(el.value), ans=norm(el.dataset.answer||'');
+    if(!ans) return null;
+    if(ans.indexOf(' / ')>-1) return ans.split(' / ').indexOf(val)>-1;
+    if(ans.indexOf('–')>-1){ var n=function(x){return x.replace(/\s*[-–]\s*/g,' ').replace(/\s+/g,' ').trim();}; return n(val)===n(ans); }
+    return val===ans;
+  }
+  function cardTitle(el){
+    var c=el.closest('.card');
+    if(c){var t=c.querySelector('.card-title'); if(t) return t.textContent.trim();}
+    var s=el.closest('.sec'), h=s?s.querySelector('.sec-title'):null;
+    return h?h.textContent.trim():'Ejercicio';
+  }
+  function harvest(){
+    var out={blanks:[],script:null,checks:[],scores:[]};
+    document.querySelectorAll('input[data-answer]').forEach(function(el){
+      out.blanks.push({card:cardTitle(el),value:el.value.trim(),answer:el.dataset.answer,correct:isCorrect(el)});
+    });
+    var vt=document.getElementById('vl-text'); if(vt) out.script=vt.value;
+    document.querySelectorAll('input[type=checkbox]').forEach(function(cb){
+      var lb=document.querySelector('label[for="'+cb.id+'"]');
+      out.checks.push({label:lb?lb.textContent.trim():cb.id,checked:cb.checked});
+    });
+    [['match-score','Emparejamiento / Matching'],['sc-sort','Clasificar verbos / Sort'],
+     ['drill-prog','Conjugation Drill'],['gq-score','Noun Gender Quiz']].forEach(function(g){
+      var m=document.getElementById(g[0]); if(m&&m.textContent.trim()) out.scores.push({card:g[1],msg:m.textContent.trim()});
+    });
+    return out;
+  }
+  function postHeight(){ try{ parent.postMessage({type:'HEIGHT',frame:window.name,h:document.documentElement.scrollHeight},'*'); }catch(e){} }
+  window.addEventListener('load',postHeight);
+  setInterval(postHeight,300);
+  window.addEventListener('message',function(e){
+    var d=e.data; if(!d) return;
+    if(d.type==='SHOW'){
+      document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('active');});
+      (d.secs||[]).forEach(function(id){var el=document.getElementById('sec-'+id); if(el) el.classList.add('active');});
+      postHeight(); setTimeout(postHeight,80);
+    }
+    if(d.type==='HARVEST'){ parent.postMessage({type:'HARVEST_RESULT',week:d.week,data:harvest()},'*'); }
+  });
+})();
+</script>
+</template>
+
+<script>
+document.getElementById('frame1').srcdoc = document.getElementById('tpl-w1').innerHTML;
+document.getElementById('frame2').srcdoc = document.getElementById('tpl-w2').innerHTML;
+
+// unified tab definitions (sequential topic order)
+var TABS = [
+  {label:'Inicio', inicio:true},
+  {label:'Vocabulario', f1:['vo'], f2:['vo']},
+  {label:'SER / LLAMARSE', f1:['se','ll']},
+  {label:'Pronunciación', f1:['pr']},
+  {label:'Verbos', f2:['vb']},
+  {label:'Artículos', f2:['ar']},
+  {label:'Ejercicios', f1:['ej'], f2:['ej']},
+  {label:'Video Log', f2:['vl']}
+];
+var current = 0;
+
+var bar = document.getElementById('tabbar');
+TABS.forEach(function(t,i){
+  var b=document.createElement('button');
+  b.className='tab'+(i===0?' active':''); b.textContent=t.label;
+  b.onclick=function(){ selectTab(i); };
+  bar.appendChild(b);
+});
+
+function applyTab(i){
+  var t=TABS[i];
+  document.getElementById('inicio').classList.toggle('show', !!t.inicio);
+  var uses1=!!t.f1, uses2=!!t.f2;
+  document.getElementById('fw1').classList.toggle('show', uses1);
+  document.getElementById('fw2').classList.toggle('show', uses2);
+  if(uses1){ try{ document.getElementById('frame1').contentWindow.postMessage({type:'SHOW',secs:t.f1},'*'); }catch(e){} }
+  if(uses2){ try{ document.getElementById('frame2').contentWindow.postMessage({type:'SHOW',secs:t.f2},'*'); }catch(e){} }
+}
+function selectTab(i){
+  current=i;
+  document.querySelectorAll('#tabbar .tab').forEach(function(b,j){ b.classList.toggle('active', j===i); });
+  applyTab(i);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+// re-apply after each iframe finishes loading (covers fast clicks)
+document.getElementById('frame1').onload=function(){ applyTab(current); };
+document.getElementById('frame2').onload=function(){ applyTab(current); };
+
+// name persistence
+var nameInput=document.getElementById('stu-name');
+try{ nameInput.value=localStorage.getItem('span121_name')||''; }catch(e){}
+nameInput.addEventListener('input',function(){ try{ localStorage.setItem('span121_name',nameInput.value); }catch(e){} });
+
+// iframe auto-height + harvest
+window.addEventListener('message',function(e){
+  var d=e.data; if(!d) return;
+  if(d.type==='HEIGHT' && d.frame){ var f=document.getElementById(d.frame); if(f) f.style.height=(d.h+6)+'px'; }
+  if(d.type==='HARVEST_RESULT'){ harvested[d.week]=d.data; tryBuild(); }
+});
+
+// ── report generation ──
+var harvested={}, pendingBuild=false;
+var WEEK_TITLES={1:'PARTE 1 — PALABRAS', 2:'PARTE 2 — VERBOS · ARTÍCULOS'};
+
+function generateReport(){
+  var name=nameInput.value.trim();
+  if(!name){ document.getElementById('submit-hint').textContent='⚠ Escribe tu nombre arriba antes de generar el reporte.'; nameInput.focus(); return; }
+  harvested={}; pendingBuild=true;
+  document.getElementById('submit-hint').textContent='Recopilando respuestas…';
+  document.getElementById('frame1').contentWindow.postMessage({type:'HARVEST',week:1},'*');
+  document.getElementById('frame2').contentWindow.postMessage({type:'HARVEST',week:2},'*');
+}
+function tryBuild(){
+  if(!pendingBuild||!harvested[1]||!harvested[2]) return;
+  pendingBuild=false;
+  var txt=buildReport(nameInput.value.trim(),[{title:WEEK_TITLES[1],data:harvested[1]},{title:WEEK_TITLES[2],data:harvested[2]}]);
+  var out=document.getElementById('report-out'); out.value=txt; out.style.display='block';
+  document.getElementById('submit-hint').textContent='Reporte listo. Descárgalo o cópialo y entrégalo a tu profesor.';
+}
+function buildReport(name,parts){
+  var L=[];
+  L.push('SPAN 121 — REPORTE DE TRABAJO DEL ESTUDIANTE');
+  L.push('Student: '+(name||'(sin nombre)'));
+  L.push('Generado: '+new Date().toLocaleString());
+  L.push(new Array(52).join('='));
+  parts.forEach(function(w){
+    L.push(''); L.push('■ '+w.title); L.push(new Array(52).join('-'));
+    var groups={},order=[];
+    w.data.blanks.forEach(function(b){ if(!groups[b.card]){groups[b.card]=[];order.push(b.card);} groups[b.card].push(b); });
+    if(!order.length) L.push('  (sin respuestas escritas)');
+    order.forEach(function(card){
+      var items=groups[card], ok=items.filter(function(i){return i.correct===true;}).length;
+      L.push(''); L.push('  '+card+'   ['+ok+'/'+items.length+']');
+      items.forEach(function(i){
+        var mark=i.correct===true?'✓':(i.value?'✗':'—');
+        var line='     '+mark+' "'+i.value+'"';
+        if(i.correct===false) line+='   (esperado: '+i.answer+')';
+        L.push(line);
+      });
+    });
+    if(w.data.scores&&w.data.scores.length){ L.push(''); L.push('  Puntajes de actividades:'); w.data.scores.forEach(function(s){ L.push('     • '+s.card+': '+s.msg); }); }
+    var anyChecked=w.data.checks&&w.data.checks.some(function(c){return c.checked;});
+    if(anyChecked){ L.push(''); L.push('  Checklist:'); w.data.checks.forEach(function(c){ L.push('     ['+(c.checked?'x':' ')+'] '+c.label); }); }
+    if(w.data.script!=null){ L.push(''); L.push('  Video Log Script:'); var s=w.data.script.trim(); L.push('     '+(s?s.split('\n').join('\n     '):'(vacío)')); }
+  });
+  return L.join('\n');
+}
+function downloadReport(){
+  var out=document.getElementById('report-out');
+  if(!out.value){ generateReport(); return; }
+  var slug=(nameInput.value.trim()||'estudiante').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  var blob=new Blob([out.value],{type:'text/plain;charset=utf-8'});
+  var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='span121-'+slug+'.txt';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+function copyReport(){
+  var out=document.getElementById('report-out');
+  if(!out.value){ generateReport(); return; }
+  out.style.display='block'; out.select();
+  try{ navigator.clipboard.writeText(out.value); }catch(e){ document.execCommand('copy'); }
+  document.getElementById('submit-hint').textContent='Copiado al portapapeles.';
+}
+</script>
+</body>
+</html>
